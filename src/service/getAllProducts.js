@@ -10,7 +10,11 @@ export const generateAllProducts = async function () {
   return await api.products.getProducts({ limit: 100 }).then((res) => {
     apiProducts.push(...res.products);
 
-    allProducts = [...apiProducts, ...DBMockProducts];
+    /* массив allProducts с полученными продуктами из АПИ и файла Database-mock*/
+    // allProducts = [...apiProducts];
+    // allProducts = [...apiProducts, ...DBMockProducts];
+    allProducts = [ ...DBMockProducts];
+
     return allProducts;
   });
   // console.log(allProducts);
@@ -23,6 +27,8 @@ export const getProducts = async function (filters) {
     //  newResult = result.filter((product) => {
     //   //   todo добавить остальные фильтры
     //   })
+
+
 
     if (filters.category) {
       newResult = newResult.filter((product) => {

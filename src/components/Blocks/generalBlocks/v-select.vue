@@ -72,7 +72,7 @@ export default {
             this.isVisiable = false
         },
         selectOption(currentOption) {
-            console.log(currentOption);
+            // console.log(currentOption);
             // return currentOption.name
             // this.selected = currentOption.name
             // console.log(this.selected);

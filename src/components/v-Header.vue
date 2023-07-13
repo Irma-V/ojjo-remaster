@@ -1,7 +1,7 @@
 <template>
     <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
-            <div class="header-wrapper m-auto w-[95%] md:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-6">
+            <div class="header-wrapper m-auto w-[95%] md:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%]">
                 <NavBar :icon="menuState.iconName" @clickOnBurger="openMenu" @logout="logout" />
                 <SideBar :class="{ close: !menuState.isOpen }" @logout="logout" />
             </div>

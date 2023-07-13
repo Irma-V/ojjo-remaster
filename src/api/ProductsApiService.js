@@ -40,15 +40,7 @@ export class ProductsApiService extends BaseApiService {
   }
 
   async getProperties(products, key) {
-    // let value = null
-    // let result = []
-    // for (let product in products) {
-    //   value = products[product][key]
-    //   result.push(value)
-    // }
-
     let result = products.map((product) => product[key]);
-
     return result;
   }
 }
