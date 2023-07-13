@@ -1,0 +1,103 @@
+<template>
+    <section>
+        <!-- <<<<<<< HEAD -->
+        <!-- <content>
+            <div class="catalog-block pb-[3.25rem] font-sans font-thin tracking-tight text-base">
+                <div class="catalog__wrapper flex flex-row flex-wrap items-center">
+                    <ProductCardItem productCardItemStyle="basis-1/3" v-for="product in items" :key="product"
+                        :product-id="product.productId" :product="product.product" :product-name="product.productName"
+                        :product-price="product.productPrice" slider-show-type='slider' :galery="product.productGalery_url"> -->
+        <!-- ======= -->
+        <div class="content">
+            <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
+                <div class="catalog__wrapper flex flex-row flex-wrap items-center">
+                    <ProductCardItem productCardItemStyle=" basis-full min-[375px]:basis-1/2 sm:basis-1/3"
+                        v-for="product in products" :key="product" :product-id="product.id" :product="product.title"
+                        :product-name="product.brand" :product-price="product.price + ' $'" slider-show-type='slider'
+                        :galery="product.images">
+                        <!-- >>>>>>> dev-1.0 -->
+                        <!-- :product-img_url="product.productImg_url"
+                        :galery="product.productGalery_url" -->
+                    </ProductCardItem>
+                </div>
+            </div>
+            <div class="load-more flex justify-center disabled:opacity-10">
+                <div class="load-more__wrapper w-1/2 md:w-1/4">
+                    <ButtonDarkGray button-name="Load More" @click="$emit('loadMore')"></ButtonDarkGray>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+<script>
+import ButtonDarkGray from '../generalBlocks/ButtonsStyle/ButtonDarkGray.vue';
+import ProductCardItem from './ProductCardItem.vue';
+
+/* Uncomment if you need to get Products data from @/database-mock */
+// import { products } from '@/database-mock';
+
+export default {
+    name: "CatalogBlock",
+    components: {
+        ButtonDarkGray,
+        ProductCardItem
+    },
+    props: {
+        productCategory: {
+            type: String,
+            required: false,
+            default: null,
+        },
+        products: {
+            type: Array,
+            required: false,
+            default: []
+        },
+    },
+    emits: {
+        loadMore: {
+            required: true,
+        },
+    },
+    data() {
+        return {
+
+            /* Uncomment if you need to get Products data from @/database-mock */
+            // items: [],
+            // limit: 6,
+            // offset: 0,
+            // step: 6
+        }
+    },
+
+    /* Uncomment if you need to get Products data from @/database-mock */
+    // created() {
+    //     this.items = this.filteredProducts().slice(this.offset, this.limit)
+    // },
+    // mounted() {
+    // if (this.items.length < 6) {
+    //     document.querySelector('.load-more').style.display = 'none'
+    // }
+
+    // },
+    // methods: {
+    //     loadMore() {
+    //         let LoadMoreBlock = document.querySelector('.load-more')
+    //         this.offset += this.step
+    //         this.limit += this.step
+    //         let newItems = this.filteredProducts().slice(this.offset, this.limit)
+    //         this.items.push(...newItems)
+    //         if (this.items.length === this.filteredProducts().length || this.items.length <= 6) {
+    //             LoadMoreBlock.style.display = 'none'
+    //         }
+    //     },
+    //     filteredProducts() {
+    //         if (this.productCategory) {
+    //             return products.filter(product => product.productCategory === this.productCategory)
+    //         }
+    //         return products
+    //     },
+    // },
+}
+</script>
+<style scoped lang="scss"></style>
