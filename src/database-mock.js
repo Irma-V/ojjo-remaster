@@ -118,7 +118,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "450 ",
+//     productPrice: "450",
 //   },
 //   {
 //     productId: "pendant02",
@@ -133,7 +133,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "450 ",
+//     productPrice: "450",
 //   },
 //   {
 //     productId: "pendant03",
@@ -148,7 +148,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1800 ",
+//     productPrice: "1800",
 //   },
 //   {
 //     productId: "pendant04",
@@ -163,7 +163,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1000 ",
+//     productPrice: "1000",
 //   },
 //   {
 //     productId: "pendant05",
@@ -178,7 +178,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "450 ",
+//     productPrice: "450",
 //   },
 //   {
 //     productId: "pendant06",
@@ -193,7 +193,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "450 ",
+//     productPrice: "450",
 //   },
 //   {
 //     productId: "pendant07",
@@ -208,7 +208,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1800 ",
+//     productPrice: "1800",
 //   },
 //   {
 //     productId: "pendant08",
@@ -223,7 +223,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1000 ",
+//     productPrice: "1000",
 //   },
 //   {
 //     productId: "pendant09",
@@ -238,7 +238,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1800 ",
+//     productPrice: "1800",
 //   },
 //   {
 //     productId: "pendant10",
@@ -253,7 +253,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "450 ",
+//     productPrice: "450",
 //   },
 
 //   // rings
@@ -270,7 +270,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1000 ",
+//     productPrice: "1000",
 //   },
 //   {
 //     productId: "ring02",
@@ -285,7 +285,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1500 ",
+//     productPrice: "1500",
 //   },
 //   {
 //     productId: "ring03",
@@ -300,7 +300,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "900 ",
+//     productPrice: "900",
 //   },
 //   {
 //     productId: "ring04",
@@ -315,7 +315,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "900 ",
+//     productPrice: "900",
 //   },
 //   // earrings
 //   {
@@ -331,7 +331,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "900 ",
+//     productPrice: "900",
 //   },
 //   {
 //     productId: "earring02",
@@ -346,7 +346,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1000 ",
+//     productPrice: "1000",
 //   },
 //   {
 //     productId: "earring03",
@@ -361,7 +361,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "800 ",
+//     productPrice: "800",
 //   },
 //   {
 //     productId: "earring04",
@@ -376,7 +376,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1200 ",
+//     productPrice: "1200",
 //   },
 //   {
 //     productId: "earring05",
@@ -391,7 +391,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "500 ",
+//     productPrice: "500",
 //   },
 //   {
 //     productId: "earring06",
@@ -406,7 +406,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "400 ",
+//     productPrice: "400",
 //   },
 //   {
 //     productId: "cufflinks01",
@@ -421,7 +421,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "400 ",
+//     productPrice: "400",
 //   },
 //   // cufflinks
 //   {
@@ -437,7 +437,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "900 ",
+//     productPrice: "900",
 //   },
 //   {
 //     productId: "cufflinks02",
@@ -452,7 +452,7 @@ export const categories = [
 //     productName: "SOKOLOV",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "900 ",
+//     productPrice: "900",
 //   },
 //   {
 //     productId: "cufflinks03",
@@ -467,7 +467,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1800 ",
+//     productPrice: "1800",
 //   },
 //   {
 //     productId: "cufflinks04",
@@ -482,7 +482,7 @@ export const categories = [
 //     productName: "Dolce & Gabanna",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "1800 ",
+//     productPrice: "1800",
 //   },
 //   {
 //     productId: "cufflinks05",
@@ -497,7 +497,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "550 ",
+//     productPrice: "550",
 //   },
 //   {
 //     productId: "cufflinks06",
@@ -512,7 +512,7 @@ export const categories = [
 //     productName: "FDLK Jewerly",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "500 ",
+//     productPrice: "500",
 //   },
 //   // bracelets
 //   {
@@ -528,7 +528,7 @@ export const categories = [
 //     productName: "Vintage",
 //     productDescription:
 //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//     productPrice: "100 ",
+//     productPrice: "100",
 //   },
 // ];
 
@@ -547,7 +547,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "450 ",
+    productPrice: "450",
   },
   {
     productId: 102,
@@ -562,7 +562,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "450 ",
+    productPrice: "450",
   },
   {
     productId: 103,
@@ -577,7 +577,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1800 ",
+    productPrice: "1800",
   },
   {
     productId: 104,
@@ -592,7 +592,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1000 ",
+    productPrice: "1000",
   },
   {
     productId: 105,
@@ -607,7 +607,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "450 ",
+    productPrice: "450",
   },
   {
     productId: 106,
@@ -622,7 +622,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "450 ",
+    productPrice: "450",
   },
   {
     productId: 107,
@@ -637,7 +637,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1800 ",
+    productPrice: "1800",
   },
   {
     productId: 108,
@@ -652,7 +652,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1000 ",
+    productPrice: "1000",
   },
   {
     productId: 109,
@@ -667,7 +667,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1800 ",
+    productPrice: "1800",
   },
   {
     productId: 110,
@@ -682,7 +682,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "450 ",
+    productPrice: "450",
   },
 
   // rings
@@ -699,7 +699,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1000 ",
+    productPrice: "1000",
   },
   {
     productId: 112,
@@ -714,7 +714,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1500 ",
+    productPrice: "1500",
   },
   {
     productId: 113,
@@ -729,7 +729,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "900 ",
+    productPrice: "900",
   },
   {
     productId: 114,
@@ -744,7 +744,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "900 ",
+    productPrice: "900",
   },
   // earrings
   {
@@ -760,7 +760,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "900 ",
+    productPrice: "900",
   },
   {
     productId: 116,
@@ -775,7 +775,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1000 ",
+    productPrice: "1000",
   },
   {
     productId: 117,
@@ -790,7 +790,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "800 ",
+    productPrice: "800",
   },
   {
     productId: 118,
@@ -805,7 +805,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1200 ",
+    productPrice: "1200",
   },
   {
     productId: 119,
@@ -820,7 +820,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "500 ",
+    productPrice: "500",
   },
   {
     productId: 120,
@@ -835,7 +835,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "400 ",
+    productPrice: "400",
   },
   {
     productId: 121,
@@ -850,7 +850,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "400 ",
+    productPrice: "400",
   },
   // cufflinks
   {
@@ -866,7 +866,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "900 ",
+    productPrice: "900",
   },
   {
     productId: 123,
@@ -881,7 +881,7 @@ export const products1 = [
     productName: "SOKOLOV",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "900 ",
+    productPrice: "900",
   },
   {
     productId: 124,
@@ -896,7 +896,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1800 ",
+    productPrice: "1800",
   },
   {
     productId: 125,
@@ -911,7 +911,7 @@ export const products1 = [
     productName: "Dolce & Gabanna",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "1800 ",
+    productPrice: "1800",
   },
   {
     productId: 126,
@@ -926,7 +926,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "550 ",
+    productPrice: "550",
   },
   {
     productId: 127,
@@ -941,7 +941,7 @@ export const products1 = [
     productName: "FDLK Jewerly",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "500 ",
+    productPrice: "500",
   },
   // bracelets
   {
@@ -957,7 +957,7 @@ export const products1 = [
     productName: "Vintage",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "100 ",
+    productPrice: "100",
   },
 ];
 
@@ -1099,7 +1099,7 @@ const array = [
     productName: "Vintage",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "100 ",
+    productPrice: "100",
   },
 ];
 
@@ -1129,7 +1129,7 @@ console.log(map);
 //   		id: "bracelet01", 
 //   		title: "bracelets", 
 //   		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-//   		price: "100 ", 
+//   		price: "100", 
 // 			discountPercentage: 0, 
 //   		rating: 0, 
 //   		stock: 0, 

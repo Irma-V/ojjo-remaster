@@ -13,7 +13,7 @@ export const generateAllProducts = async function () {
     /* массив allProducts с полученными продуктами из АПИ и файла Database-mock*/
     // allProducts = [...apiProducts];
     // allProducts = [...apiProducts, ...DBMockProducts];
-    allProducts = [ ...DBMockProducts];
+    allProducts = [...DBMockProducts];
 
     return allProducts;
   });
@@ -23,19 +23,33 @@ export const generateAllProducts = async function () {
 export const getProducts = async function (filters) {
   return await generateAllProducts().then((result) => {
     let newResult = result;
-
     //  newResult = result.filter((product) => {
     //   //   todo добавить остальные фильтры
     //   })
-
-
-
     if (filters.category) {
       newResult = newResult.filter((product) => {
         return product.category === filters.category;
       });
     }
 
+    if (filters.moreFilters !== []) {
+      newResult = newResult.filter((product) => {
+        let isValid = true;
+        for (let i in filters.moreFilters) {
+          //   console.log();
+          if (
+            product[filters.moreFilters[i].key] === filters.moreFilters[i].value
+          ) {
+            continue;
+          }
+          isValid = false;
+          break;
+        }
+        return isValid;
+      });
+      //   console.log(newResult);
+    }
+    
     newResult = newResult.slice(filters.offset, filters.limit);
     return newResult;
   });

@@ -1,13 +1,5 @@
 <template>
     <section>
-        <!-- <<<<<<< HEAD -->
-        <!-- <content>
-            <div class="catalog-block pb-[3.25rem] font-sans font-thin tracking-tight text-base">
-                <div class="catalog__wrapper flex flex-row flex-wrap items-center">
-                    <ProductCardItem productCardItemStyle="basis-1/3" v-for="product in items" :key="product"
-                        :product-id="product.productId" :product="product.product" :product-name="product.productName"
-                        :product-price="product.productPrice" slider-show-type='slider' :galery="product.productGalery_url"> -->
-        <!-- ======= -->
         <div class="content">
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
                 <div class="catalog__wrapper flex flex-row flex-wrap items-center">
@@ -15,9 +7,6 @@
                         v-for="product in products" :key="product" :product-id="product.id" :product="product.title"
                         :product-name="product.brand" :product-price="product.price + ' $'" slider-show-type='slider'
                         :galery="product.images">
-                        <!-- >>>>>>> dev-1.0 -->
-                        <!-- :product-img_url="product.productImg_url"
-                        :galery="product.productGalery_url" -->
                     </ProductCardItem>
                 </div>
             </div>

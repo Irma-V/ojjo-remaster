@@ -26,11 +26,11 @@ const routes = [
 
   //main-layout
   {
-    path: "/home",
+    path: "/",
     name: "home",
     meta: { layout: "main"},
     component: () => import("../components/IndexPage.vue"),
-    alias: "/",
+    // alias: "/",
   },
   {
     path: "/catalog/category/:productCategory?",

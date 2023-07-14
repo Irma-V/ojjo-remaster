@@ -22,6 +22,7 @@ import TitleBlock from '../generalBlocks/TitleBlock.vue';
 import ProductCardItem from '../CatalogPage/ProductCardItem.vue';
 import Agile from 'vue-agile/src/Agile.vue';
 import { api } from '@/api.js'
+import { generateAllProducts } from "@/service/getAllProducts";
 
 export default {
     name: "RelatedProducts",
@@ -78,12 +79,13 @@ export default {
         }
     },
     async created() {
-        await api.products
-            .getProducts()
-            .then((res) => {
-                this.products = res.products
-                // console.log(this.products);
-            })
+        // await api.products
+        //     .getProducts()
+        //     .then((res) => {
+        //         this.products = res.products
+        //         // console.log(this.products);
+        //     })
+        this.products = await generateAllProducts()
     },
 
 }
