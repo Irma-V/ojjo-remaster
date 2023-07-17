@@ -1,5 +1,5 @@
 <template>
-    <FilterBlock @select-change="filterChangeHandler"></FilterBlock>
+    <FilterBlock @select-change="filterChangeHandler"/>
     <section>
         <div class="content">
             <div class="info w-full flex flex-row flex-wrap justify-around items-center">
@@ -10,9 +10,9 @@
             </div>
         </div>
     </section>
-    <CatalogBlock :productCategory="productCategory" :products="items" @loadMore="loadMore()"></CatalogBlock>
-    <AboutItBlock></AboutItBlock>
-    <SubscriptionBlock></SubscriptionBlock>
+    <CatalogBlock :productCategory="productCategory" :products="items" :total="allProducts.length" :totalFiltered="filters.length" :lim="this.step" @loadMore="loadMore()"/>
+    <AboutItBlock/>
+    <SubscriptionBlock/>
 </template>
 
 <script>
@@ -45,6 +45,7 @@ export default {
         return {
             allProducts: [],
             items: [],
+            step: 6,
             limit: 6,
             offset: 0,
             category: null,
@@ -64,14 +65,14 @@ export default {
             this.allProducts = await generateAllProducts()
             let filteredProducts = await getProducts(this.getFullFilters())
             this.items = filteredProducts
-            this.offset += 6
-            this.limit += 6
+            this.offset += this.step
+            this.limit += this.step
         },
 
         async filterChangeHandler(event, name) {
             // console.log('содержимое event и name: ',event, name)
 
-            /* очищение каталога */
+            /* Очищение каталога */
             this.items = []
 
             /* Наполнение фильтра */
@@ -92,13 +93,12 @@ export default {
 
 
             /* Получение обновленного каталога */
-            // /* посредством API через подкл-е к https://dummyjson.com (логика отключена)*/
-            // //   api.products
-            // //     .getProducts(this.getFullFilters())
-            // //     .then((res) => {
-            // //       this.items = res.products
-            // //       this.offset += res.products.length
-            // //     })
+            /* посредством API через подкл-е к https://dummyjson.com (логика отключена)*/
+            //   api.products.getProducts(this.getFullFilters()).then((res) => {
+            //       this.items = res.products
+            //       this.offset += res.products.length
+            //     })
+
             this.items = await getProducts(this.getFullFilters())
         },
 
@@ -117,7 +117,7 @@ export default {
         },
 
         reset() {
-            this.limit = 6
+            this.limit = this.step
             this.offset = 0
             this.loadMore()
             this.filters = []

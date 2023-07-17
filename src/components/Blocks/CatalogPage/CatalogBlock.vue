@@ -10,7 +10,8 @@
                     </ProductCardItem>
                 </div>
             </div>
-            <div class="load-more flex justify-center disabled:opacity-10">
+            <div v-if="(products.length === totalFiltered) || ((lim-1) < products.length && products.length < total)"
+                class="load-more flex justify-center disabled:opacity-10">
                 <div class="load-more__wrapper w-1/2 md:w-1/4">
                     <ButtonDarkGray button-name="Load More" @click="$emit('loadMore')"></ButtonDarkGray>
                 </div>
@@ -42,6 +43,9 @@ export default {
             required: false,
             default: []
         },
+        total: { type: Number },
+        lim: { type: Number },
+        totalFiltered: {type: Number},
     },
     emits: {
         loadMore: {
@@ -50,7 +54,7 @@ export default {
     },
     data() {
         return {
-
+            productsMax: this.products.length
             /* Uncomment if you need to get Products data from @/database-mock */
             // items: [],
             // limit: 6,

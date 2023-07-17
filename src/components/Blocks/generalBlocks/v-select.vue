@@ -85,7 +85,7 @@ export default {
     beforeUnmount() {
         document.removeEventListener('click', this.clickOutside)
     },
-    
+
 }
 </script>
 <style scoped lang="scss">

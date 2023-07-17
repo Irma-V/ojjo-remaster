@@ -68,7 +68,7 @@ export default {
             // ],
 
             allProducts: [],
-            
+
             brands: [],
             prices: [],
             category: [],
@@ -95,8 +95,8 @@ export default {
         this.allProducts = await generateAllProducts()
 
         this.brands = this.getOptions(this.getUniqueNames(await api.products.getProperties(this.allProducts, 'brand')))
-        this.prices = this.getOptions(this.getUniqueNames(await api.products.getProperties(this.allProducts, 'price')))
         this.category = this.getOptions(this.getUniqueNames(await api.products.getProperties(this.allProducts, 'category')))
+        this.prices = this.getOptions(this.getUniqueNames(await api.products.getProperties(this.allProducts, 'price')))
     },
 
     mounted() {
@@ -126,6 +126,14 @@ export default {
             return result
         },
 
+        sorting(arr) {
+            arr = arr.sort((a, b) => {
+                if (a.date > b.date) {
+                    return -1
+                }
+            });
+            console.log(arr);
+        },
 
     },
 };
