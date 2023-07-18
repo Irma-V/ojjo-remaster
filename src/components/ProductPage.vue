@@ -7,7 +7,7 @@
   <ProductCard :productId="productId">
   </ProductCard>
   <AboutItBlock></AboutItBlock>
-  <RelatedProducts></RelatedProducts>
+  <RelatedProducts :productId="productId"></RelatedProducts>
   <SubscriptionBlock></SubscriptionBlock>
 </template>
 
@@ -46,7 +46,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.productId);
+    console.log("id текущего товара: ",this.productId);
   },
 };
 

@@ -101,7 +101,7 @@ export default {
 <style scoped lang="scss">
 section {
     &:first-child {
-        margin-top: 6.25rem;
+        margin-top: 7.25rem;
     }
 }
 

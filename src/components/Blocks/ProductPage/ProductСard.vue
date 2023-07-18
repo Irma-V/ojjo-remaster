@@ -10,8 +10,9 @@
                         <div
                             class="product-card-information__wrapper border-[0.1rem] p-[5%] h-full flex flex-col justify-between">
                             <!-- BULKA SHWABRA ABRIKOS -->
-                            <div class="title basis-[5%] font-semibold text-lg tracking-widest uppercase">{{
-                                product.title }} {{ product.title }}</div>
+                            <div class="title basis-[5%] font-semibold text-lg tracking-widest uppercase">
+                                {{ product.title }} {{ product.brand }}
+                            </div>
                             <div class="additional-inform basis-[5%] text-[#ccc] text-sm w-2/3">
                                 <div class="additional-inform__wrapper flex flex-row justify-between">
                                     <!-- <div v-if="product">
@@ -96,9 +97,9 @@ export default {
             // this.product = res;
 
             let products = await generateAllProducts().then(result => result)
-            console.log(products);
+            // console.log(products);
             this.product = products.find(product => product.id == this.productId)
-            console.log(this.product);
+            // console.log(this.product);
         }
 
 

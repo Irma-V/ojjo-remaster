@@ -14,6 +14,9 @@ export default {
         EmptyLayout,
         MainLayout,
     },
+    // mounted(){
+    //     document.addEventListener('touchstart', handler, {passive: true});
+    // },
     computed: {
         layout() {
             // console.log(this.$route.meta.layout);

@@ -5,25 +5,24 @@
                 <img v-if="sliderShowType === sliderShowTypes.SINGLE" :src="productImg_url"
                     class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] md:h-[10rem] lg:h-60" alt="">
                 <!-- h-[5rem] sm:h-[7rem] md:h-[10rem] lg:h-60 -->
-                <agile v-if="sliderShowType === sliderShowTypes.SLIDER" :slidesToShow="1" :infinite="false"
-                    :centerMode="true">
+                <agile v-if="sliderShowType === sliderShowTypes.SLIDER" :slidesToShow="1" :infinite="false" :centerMode="false" :dots="false">
                     <img v-for="image in galery" :key="image" :src="image" alt=""
                         class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] md:h-[10rem] lg:h-60">
                 </agile>
 
             </div>
-            <div class="catalog-item__description flex flex-col justify-between items-center w-full">
+            <div class="catalog-item__description flex flex-col justify-between items-center w-full" @click.stop="this.$router.push(`/product/id=${productId}`)">
                 <div class="catalog-item-category mb-[5%] text-center">{{ product }}</div>
                 <div class="catalog-item-name font-bold mb-[5%]">{{ productName }}</div>
                 <div class="catalog-item-price w-1/2 mb-[5%]">
-                    <router-link :to="{
+                    <!-- <router-link :to="{
                         name: 'ProductPage',
                         params: {
                             productId: productId
                         },
-                    }">
+                    }"> -->
                         <ButtonDarkGray :button-name="productPrice"></ButtonDarkGray>
-                    </router-link>
+                    <!-- </router-link> -->
                 </div>
             </div>
         </div>
@@ -89,3 +88,15 @@ export default {
     },
 }
 </script>
+
+<style scoped lang="scss">
+// .agile__slides {
+    .catalog-item {
+        transition: 0.9s;
+        &:hover {
+            background-color: rgba(110, 164, 146, 0.375);
+        }
+    }
+// }
+
+</style>

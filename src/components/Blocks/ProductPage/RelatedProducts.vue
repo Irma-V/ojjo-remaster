@@ -4,9 +4,9 @@
             <TitleBlock title="Products You May Like" description="We've got something else for you"></TitleBlock>
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
                 <!-- <div class="catalog__wrapper flex flex-row justify-between"> -->
-                <Agile :slidesToShow="3" :infinite="true" :navButtons="false" :autoplay="true" :autoplaySpeed="5000"
-                    :isAutoplayPaused="true" :options="productsOptions">
-                    <ProductCardItem v-for="product in products" :key="product" :product-id="product.id"
+                <agile :options="productsOptions" :autoplay="true" :autoplaySpeed="3000" :isAutoplayPaused="true"
+                    :dots="false" :nav-buttons="false">
+                    <ProductCardItem v-for="product in relatedProducts" :key="product.id" :product-id="product.id"
                         :product="product.title" :product-name="product.brand" :product-price="product.price"
                         slider-show-type='single' :productImg_url="product.images[0]"></ProductCardItem>
                 </agile>
@@ -14,24 +14,27 @@
             </div>
         </div>
     </section>
-    <div v-else>Nixua netu</div>
+    <!-- <div v-else>Nixua netu</div> -->
 </template>
 <script>
 import TitleBlock from '../generalBlocks/TitleBlock.vue';
 // import { products } from '@/database-mock';
 import ProductCardItem from '../CatalogPage/ProductCardItem.vue';
-import Agile from 'vue-agile/src/Agile.vue';
 import { api } from '@/api.js'
 import { generateAllProducts } from "@/service/getAllProducts";
+import { VueAgile } from 'vue-agile'
 
 export default {
     name: "RelatedProducts",
     components: {
         TitleBlock,
         ProductCardItem,
-        Agile
+        agile: VueAgile
     },
     props: {
+        productId: {
+            type: Number,
+        }
     },
     data() {
         return {
@@ -75,7 +78,7 @@ export default {
                         settings: { slidesToShow: '3' }
                     },
                 ]
-            }
+            },
         }
     },
     async created() {
@@ -85,8 +88,32 @@ export default {
         //         this.products = res.products
         //         // console.log(this.products);
         //     })
+
         this.products = await generateAllProducts()
+
     },
+
+    computed: {
+        relatedProducts() {
+            let currentProduct = this.products.find(product => product.id == this.productId)
+            // console.log(currentProduct, 11111);
+            // console.log(this.products, 22222);
+
+            /* Получить список товаров, подходящих по цене, бренду и категории */
+            let filteredData = this.products.filter(item => {
+                let isValid = true
+                if ((item.price === currentProduct.price) || (item.brand === currentProduct.brand) || (item.category === currentProduct.category)) {
+                    if ((item.id === currentProduct.id)) {
+                        isValid = false
+                    }
+                    return isValid
+                }
+
+            })
+            console.log(filteredData);
+            return filteredData
+        }
+    }
 
 }
 </script>

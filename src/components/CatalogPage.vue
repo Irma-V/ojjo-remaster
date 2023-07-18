@@ -1,21 +1,39 @@
 <template>
-    <FilterBlock @select-change="filterChangeHandler"/>
-    <section>
+    <div id="fltr" v-if="productCategory === null">
+        <FilterBlock @select-change="filterChangeHandler" />
+        <section>
+            <div class="content">
+                <div class="info w-full flex flex-row flex-wrap justify-around items-center">
+                    <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
+                    <div class="resetBtn basis-1/5">
+                        <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section v-else>
         <div class="content">
+            <TitleBlock :title="productCategory" description="Category:"></TitleBlock>
             <div class="info w-full flex flex-row flex-wrap justify-around items-center">
-                <p v-if="filters.length"> найдено товаров: {{ items.length }}</p>
-                <div class="resetBtn basis-1/5">
-                    <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset"></ButtonDarkGray>
+                <div class="homeBtn w-1/5 flex">
+                    <!-- вернуться на шаг назад -->
+                    <ButtonDarkGray button-name="come back" @click.prevent="this.$router.go(-1)" />
+                    
+                    <!-- Вернуться на стартовую -->
+                    <!-- <ButtonDarkGray button-name="Homeback" @click.prevent="this.$router.push('/')" /> -->
                 </div>
             </div>
         </div>
     </section>
-    <CatalogBlock :productCategory="productCategory" :products="items" :total="allProducts.length" :totalFiltered="filters.length" :lim="this.step" @loadMore="loadMore()"/>
-    <AboutItBlock/>
-    <SubscriptionBlock/>
+    <CatalogBlock :productCategory="productCategory" :products="items" :total="allProducts.length"
+        :totalFiltered="filters.length" :lim="this.step" @loadMore="loadMore()" />
+    <AboutItBlock />
+    <SubscriptionBlock />
 </template>
 
 <script>
+import TitleBlock from "@/components/Blocks/generalBlocks/TitleBlock.vue";
 import FilterBlock from "./Blocks/CatalogPage/FilterBlock.vue";
 import CatalogBlock from "./Blocks/CatalogPage/CatalogBlock.vue";
 import AboutItBlock from "./Blocks/CatalogPage/AboutItBlock.vue";
@@ -28,6 +46,7 @@ import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.v
 export default {
     name: "CatalogPage",
     components: {
+        TitleBlock,
         FilterBlock,
         CatalogBlock,
         AboutItBlock,
@@ -49,15 +68,22 @@ export default {
             limit: 6,
             offset: 0,
             category: null,
-            filters: []
+            isVisible: true,
+            filters: [],
+            filteredCount: 0
         }
     },
     async created() {
         this.category = this.productCategory
+        console.log(this.category);
     },
 
     mounted() {
         this.loadMore()
+
+        if (this.category !== null) {
+            this.isVisible = false
+        }
     },
 
     methods: {
@@ -98,8 +124,9 @@ export default {
             //       this.items = res.products
             //       this.offset += res.products.length
             //     })
-
-            this.items = await getProducts(this.getFullFilters())
+            let filteredProducts = await getProducts(this.getFullFilters())
+            this.items = filteredProducts
+            this.filteredCount = filteredProducts.length
         },
 
         getFullFilters() {
@@ -130,7 +157,7 @@ export default {
 <style scoped lang="scss">
 section {
     &:first-child {
-        margin-top: 6.25rem;
+        margin-top: 7.25rem;
     }
 }
 </style>
