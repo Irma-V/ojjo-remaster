@@ -1,5 +1,5 @@
 <template>
-    <div class="product-card-galery__wrapper flex flex-col justify-between h-[30rem] md:h-[25rem] lg:h-[30rem] xl:h-[35rem] 2xl:h-[40rem] mb-[3%] md:mb-0">
+    <div class="product-card-galery__wrapper flex flex-col justify-between h-[30rem] min-[769px]:h-[25rem] lg:h-[30rem] xl:h-[35rem] 2xl:h-[40rem] mb-[3%] min-[769px]:mb-0">
         <div class="photo-gallery__large-image pb-[2%] basis-4/5 overflow-hidden">
             <img class="large-image__wrapper rounded-sm object-cover w-full h-full" :src="selectedImage" alt="Image">
         </div>

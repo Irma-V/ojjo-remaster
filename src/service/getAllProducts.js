@@ -49,8 +49,13 @@ export const getProducts = async function (filters) {
       });
       //   console.log(newResult);
     }
-    
+    // console.log( 'полученные данные', newResult);
+    let count = newResult.length;
     newResult = newResult.slice(filters.offset, filters.limit);
-    return newResult;
+    // console.log( 'полученный данные с учетом лимита', newResult);
+    return {
+      count: count,
+      result: newResult,
+    };
   });
 };

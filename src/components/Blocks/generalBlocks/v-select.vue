@@ -1,8 +1,8 @@
 <template>
-    <section ref="vSelect" class="min-[375px]:basis-1/2 md:basis-1/3 xl:basis-[15%] p-[2%]">
+    <section ref="vSelect" class="min-[375px]:basis-1/2 min-[769px]:basis-1/3 xl:basis-[15%] p-[2%]">
         <div class="v-select relative w-full 
                 font-sans font-thin tracking-tight 
-                text-base md:text-xs lg:text-sm xl:text-base">
+                text-base min-[769px]:text-xs lg:text-sm xl:text-base">
 
             <p class="v-select__title capitalize cursor-pointer p-1 border-solid border-[0.1rem] border-500 flex flex-row justify-between items-center"
                 @click="switchVisiable()">

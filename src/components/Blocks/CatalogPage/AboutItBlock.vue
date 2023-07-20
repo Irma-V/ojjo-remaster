@@ -1,8 +1,8 @@
 <template>
     <section>
         <div class="content">
-            <div class="about-it-block px-[10%] font-sans font-thin tracking-tight text-xs sm:text-sm md:text-sm lg:text-base xl:text-xl">
-                <div class="about-it__wrapper flex flex-col md:flex-row-reverse md:justify-between">
+            <div class="about-it-block px-[10%] font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-sm lg:text-base xl:text-xl">
+                <div class="about-it__wrapper flex flex-col min-[769px]:flex-row-reverse min-[769px]:justify-between">
                     <div class="about-it-title basis-1/3">
                         <div v-if="services.length" class="about-it-title__wrapper flex flex-row flex-wrap justify-between items-center">
                             <div v-for="service in services" :key="service" class="about-it-title-item p-[2%] basis-2/4">

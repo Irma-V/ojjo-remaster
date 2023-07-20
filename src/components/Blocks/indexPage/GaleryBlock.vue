@@ -3,7 +3,7 @@
         <div class="content">
             <TitleBlock title="We're on social media" description="#ojjo_jewerly"></TitleBlock>
             <div class="start-page-galery">
-                <div class="start-page-galery__wrapper grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                <div class="start-page-galery__wrapper grid grid-cols-2 min-[769px]:grid-cols-3 lg:grid-cols-4 gap-0">
                     <div v-for="element in startPageGalery" :key="element"
                         class="start-page-galery-item h-[7rem] sm:h-[10rem]  lg:h-[18.75rem] overflow-hidden" :class="element.itemStyle">
                         <img :src="element.image_url" class="w-full h-wull object-cover" :class="element.imageStyle" alt="">

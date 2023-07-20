@@ -1,13 +1,13 @@
 <template>
-    <div class="catalog-item font-sans font-thin tracking-tight text-xs sm:text-sm md:text-sm lg:text-base xl:text-xl h-full min-[375px]:h-[13rem] sm:h-full p-4" :id="productId" :class="productCardItemStyle">
+    <div class="catalog-item font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-sm lg:text-base xl:text-xl h-full min-[375px]:h-[13rem] sm:h-full" :id="productId" :class="productCardItemStyle">
         <div class="catalog-item__wrapper flex flex-row min-[375px]:flex-col justify-between items-center w-full h-full">
             <div class="catalog-item-img mb-[5%] w-4/5">
                 <img v-if="sliderShowType === sliderShowTypes.SINGLE" :src="productImg_url"
-                    class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] md:h-[10rem] lg:h-60" alt="">
-                <!-- h-[5rem] sm:h-[7rem] md:h-[10rem] lg:h-60 -->
-                <agile v-if="sliderShowType === sliderShowTypes.SLIDER" :slidesToShow="1" :infinite="false" :centerMode="false" :dots="false">
-                    <img v-for="image in galery" :key="image" :src="image" alt=""
-                        class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] md:h-[10rem] lg:h-60">
+                    class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] min-[769px]:h-[10rem] lg:h-60" alt="">
+                <!-- h-[5rem] sm:h-[7rem] min-[769px]:h-[10rem] lg:h-60 -->
+                <agile v-if="sliderShowType === sliderShowTypes.SLIDER" :slidesToShow="1" :infinite="false" :dots="false">
+                    <img v-for="image in Object.values(this.galery)" :key="image" :src="image" alt=""
+                        class="rounded-lg object-cover w-full h-[5rem] min-[425px]:h-[7rem] sm:h-[7rem] min-[769px]:h-[10rem] lg:h-60">
                 </agile>
 
             </div>
@@ -83,8 +83,13 @@ export default {
     },
     data() {
         return {
-            sliderShowTypes: SliderShowTypeEnum
+            sliderShowTypes: SliderShowTypeEnum,
         };
+    },
+
+    mounted(){
+        // console.log(this.sliderShowTypes);
+        console.log(Object.values(this.galery));
     },
 }
 </script>

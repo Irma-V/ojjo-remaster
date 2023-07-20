@@ -5,7 +5,7 @@
             <div class="tags-and-categories">
                 <div class="tags-and-categories__wrapper">
                     <ul class="tags-wrapper flex flex-row justify-between mb-[7%] flex-wrap lg:flex-nowrap">
-                        <li v-for="tag in tags" :key="tag" class="tags-item basis-1/2 md:basis-1/3 xl:basis-[15%] p-[2%]"
+                        <li v-for="tag in tags" :key="tag" class="tags-item basis-1/2 min-[769px]:basis-1/3 xl:basis-[15%] p-[2%]"
                             :id="tag.id">
                             <ButtonWithBorder :is-active="tag.id === selectedTag.id" @click="selectTag(tag)"
                                 :button-name="tag.title"></ButtonWithBorder>
@@ -13,10 +13,10 @@
                     </ul>
 
                     <div
-                        class="categories-catalog uppercase font-sans font-thin tracking-tight text-xs sm:text-sm md:text-base lg:text-xl text-white">
-                        <div class="categories-catalog__wrapper grid grid-cols-2 md:grid-cols-3 gap-4 justify-center">
+                        class="categories-catalog uppercase font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-base lg:text-xl text-white">
+                        <div class="categories-catalog__wrapper grid grid-cols-2 min-[769px]:grid-cols-3 gap-4 justify-center">
                             <div v-for="category in categoriesByTag" :key="category"
-                                class="categories-catalog-item w-full h-[5rem] min-[375px]:h-[10rem] md:h-[17.5rem]"
+                                class="categories-catalog-item w-full h-[5rem] min-[375px]:h-[10rem] min-[769px]:h-[17.5rem]"
                                 :class="category.bgImg">
                                 <router-link :to="{
                                     name: 'CatalogPage',

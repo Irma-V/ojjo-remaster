@@ -957,7 +957,52 @@ export const products1 = [
     productName: "Vintage",
     productDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
-    productPrice: "100",
+    productPrice: "1000",
+  },
+  {
+    productId: 129,
+    product: "bracelets",
+    productCategory: "bracelets",
+    productImg_url: require("./assets/img/catalog/bracelets/bracelet02/bracelet02_01.png"),
+    productGalery_url: [
+      require("./assets/img/catalog/bracelets/bracelet02/bracelet02_01.png"),
+      require("./assets/img/catalog/bracelets/bracelet02/bracelet02_02.png"),
+      require("./assets/img/catalog/bracelets/bracelet02/bracelet02_03.png"),
+    ],
+    productName: "DIKOVINKA",
+    productDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
+    productPrice: "500",
+  },
+  {
+    productId: 130,
+    product: "bracelets",
+    productCategory: "bracelets",
+    productImg_url: require("./assets/img/catalog/bracelets/bracelet03/bracelet03_01.png"),
+    productGalery_url: [
+      require("./assets/img/catalog/bracelets/bracelet03/bracelet03_01.png"),
+      require("./assets/img/catalog/bracelets/bracelet03/bracelet03_02.png"),
+      require("./assets/img/catalog/bracelets/bracelet03/bracelet03_03.png"),
+    ],
+    productName: "DIKOVINKA",
+    productDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
+    productPrice: "800",
+  },
+  {
+    productId: 131,
+    product: "bracelets",
+    productCategory: "bracelets",
+    productImg_url: require("./assets/img/catalog/bracelets/bracelet04/bracelet04_01.png"),
+    productGalery_url: [
+      require("./assets/img/catalog/bracelets/bracelet04/bracelet04_01.png"),
+      require("./assets/img/catalog/bracelets/bracelet04/bracelet04_02.png"),
+      require("./assets/img/catalog/bracelets/bracelet04/bracelet04_03.png"),
+    ],
+    productName: "Vintage",
+    productDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. Et nulla sit convallis orci est, fames sit luctus lacus.",
+    productPrice: "1500",
   },
 ];
 

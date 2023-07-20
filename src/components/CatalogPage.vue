@@ -1,11 +1,11 @@
 <template>
-    <div id="fltr" v-if="productCategory === null">
+    <div id="fltr" v-if="!category">
         <FilterBlock @select-change="filterChangeHandler" />
         <section>
             <div class="content">
                 <div class="info w-full flex flex-row flex-wrap justify-around items-center">
                     <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
-                    <div class="resetBtn basis-1/5">
+                    <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
                         <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
                     </div>
                 </div>
@@ -14,21 +14,21 @@
     </div>
     <section v-else>
         <div class="content">
-            <TitleBlock :title="productCategory" description="Category:"></TitleBlock>
-            <div class="info w-full flex flex-row flex-wrap justify-around items-center">
-                <div class="homeBtn w-1/5 flex">
+            <TitleBlock :title="category" description="Category:"></TitleBlock>
+            <div v-if="items.length" class="info w-full flex flex-row flex-wrap justify-around items-center">
+                <div class="homeBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
                     <!-- вернуться на шаг назад -->
                     <ButtonDarkGray button-name="come back" @click.prevent="this.$router.go(-1)" />
-                    
-                    <!-- Вернуться на стартовую -->
-                    <!-- <ButtonDarkGray button-name="Homeback" @click.prevent="this.$router.push('/')" /> -->
+                    <!-- Вернуться на стартовую <ButtonDarkGray button-name="Homeback" @click.prevent="this.$router.push('/')" /> -->
                 </div>
             </div>
+            <p v-else class="text-center">Товары по данной категории отстутствуют</p>
         </div>
     </section>
-    <CatalogBlock :productCategory="productCategory" :products="items" :total="allProducts.length"
-        :totalFiltered="filters.length" :lim="this.step" @loadMore="loadMore()" />
-    <AboutItBlock />
+    {{ count }}
+    <CatalogBlock v-if="items.length" :productCategory="productCategory" :products="items" :total="allProducts.length"
+        :filteredCount="filteredCount" :lim="this.step" @loadMore="loadMore()" />
+    <AboutItBlock v-if="items.length" />
     <SubscriptionBlock />
 </template>
 
@@ -68,31 +68,30 @@ export default {
             limit: 6,
             offset: 0,
             category: null,
-            isVisible: true,
             filters: [],
+            filteredProducts: [],
             filteredCount: 0
         }
     },
     async created() {
         this.category = this.productCategory
-        console.log(this.category);
+        console.log('Категория ', this.category || 'отсутствует');
+        // this.limit = this.step
+        this.allProducts = await generateAllProducts()
+
     },
 
     mounted() {
         this.loadMore()
-
-        if (this.category !== null) {
-            this.isVisible = false
-        }
     },
 
     methods: {
         async loadMore() {
-            this.allProducts = await generateAllProducts()
             let filteredProducts = await getProducts(this.getFullFilters())
-            this.items = filteredProducts
-            this.offset += this.step
+            this.items = filteredProducts.result
+            this.filteredCount = filteredProducts.count
             this.limit += this.step
+            this.offset += this.step
         },
 
         async filterChangeHandler(event, name) {
@@ -100,6 +99,7 @@ export default {
 
             /* Очищение каталога */
             this.items = []
+
 
             /* Наполнение фильтра */
             this.filters.push({
@@ -111,22 +111,22 @@ export default {
                 const lastEl = this.filters[this.filters.length - 1]
 
                 /* Удаление элемента в фильтрах, совпадающего по ключу*/
-                if ((this.filters.length !== 1) && (el.key === lastEl.key) && (el !== lastEl)) {
+                if ((this.filters.length !== 1) && (el !== lastEl) && (el.key === lastEl.key)) {
                     delete this.filters[i]
                 }
                 // console.log('сгенерированный фильтр: ', this.filters);
             }
 
-
             /* Получение обновленного каталога */
-            /* посредством API через подкл-е к https://dummyjson.com (логика отключена)*/
-            //   api.products.getProducts(this.getFullFilters()).then((res) => {
-            //       this.items = res.products
-            //       this.offset += res.products.length
-            //     })
-            let filteredProducts = await getProducts(this.getFullFilters())
-            this.items = filteredProducts
-            this.filteredCount = filteredProducts.length
+            this.limit = this.step
+            this.offset = 0
+            this.loadMore()
+            // let filteredProducts = await getProducts(this.getFullFilters())
+            // this.filteredCount = filteredProducts.count
+            // this.items = filteredProducts.result
+
+            // this.limit += this.step
+            // this.offset += this.step
         },
 
         getFullFilters() {
@@ -144,10 +144,10 @@ export default {
         },
 
         reset() {
+            this.filters = []
             this.limit = this.step
             this.offset = 0
             this.loadMore()
-            this.filters = []
             // console.log('сброшенные данные: ', this.items, this.filters);
         },
     }
@@ -210,3 +210,11 @@ section {
             // })
   -->
 
+<!-- /* Получение обновленного каталога посредством API через подкл-е к https://dummyjson.com (логика отключена и убрана из  filterChangeHandler)*/
+            //   api.products.getProducts(this.getFullFilters()).then((res) => {
+            //       this.items = res.products
+            //       this.offset += res.products.length
+            //     }) 
+
+
+ -->

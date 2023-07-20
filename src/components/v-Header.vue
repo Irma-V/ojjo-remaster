@@ -1,7 +1,7 @@
 <template>
     <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
-            <div class="header-wrapper m-auto w-[95%] md:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%]">
+            <div class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
                 <NavBar :icon="menuState.iconName" @clickOnBurger="openMenu" @logout="logout" />
                 <SideBar :class="{ close: !menuState.isOpen }" @logout="logout" />
             </div>
@@ -86,10 +86,10 @@ header {
 
 <!-- <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
-            <div class="header-wrapper m-auto w-[95%] md:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-6">
+            <div class="header-wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-6">
 
                 <nav class="navbar flex flex-row justify-between items-center">
-                    <div class="header-list hidden md:block">
+                    <div class="header-list hidden min-[769px]:block">
                         <ul>
                             <li>menu1</li>
                             <li>menu2</li>
@@ -101,7 +101,7 @@ header {
                             <img src="~@/assets/img/logo/OJJO.png" alt="OJJO.png" />
                         </router-link>
                     </div>
-                    <div class="header-list hidden md:block">
+                    <div class="header-list hidden min-[769px]:block">
                         <ul>
                             <li>
                                 <div class="flex flex-row justify-between items-center">
@@ -130,14 +130,14 @@ header {
                             </li>
                         </ul>
                     </div>
-                    <div ref="menu" @click="openMenu()" class="menu-burger block md:hidden">
+                    <div ref="menu" @click="openMenu()" class="menu-burger block min-[769px]:hidden">
                         <ion-icon name="menu" size="large"></ion-icon>
                     </div>
                 </nav>
                 
                 <nav v-if="isMenuOpen"
                     class="sidebar w-full min-[375px]:max-w-[20rem] max-[425px]:h-[100rem]">
-                    <div class="sidebar-content__wrapper block md:hidden">
+                    <div class="sidebar-content__wrapper block min-[769px]:hidden">
                         <div class="sidebar-list py-[5%]">
                             <ul class="flex flex-col">
                                 <li class="py-[2%]">

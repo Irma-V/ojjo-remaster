@@ -1,6 +1,6 @@
 <template>
     <nav class="sidebar w-full min-[375px]:max-w-[20rem] max-[425px]:h-[100rem]">
-        <div class="sidebar-content__wrapper block md:hidden">
+        <div class="sidebar-content__wrapper block min-[769px]:hidden">
             <div class="sidebar-list py-[5%]">
                 <ul class="flex flex-col">
                     <li class="py-[2%]">

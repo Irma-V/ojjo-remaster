@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="content">
-            <div class="flex h-full w-full flex-col mt-[15rem] md:mt-[20rem] min-[900px]:mt-[25rem]">
+            <div class="flex h-full w-full flex-col mt-[15rem] min-[769px]:mt-[20rem] min-[900px]:mt-[25rem]">
                 <div class="welcome-block__wrapper flex flex-col justify-between items-center text-white xl:h-[9.375rem]">
                     <h1 class="capitalize font-serif text-3xl font-bold tracking-tight text-center">expensive quality,
                         richness

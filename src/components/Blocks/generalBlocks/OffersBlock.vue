@@ -4,7 +4,7 @@
             <div class="offers-block">
                 <div class="offers-block__wrapper flex flex-col justify-between items-center">
                     <TitleBlock title="Visit our salons in Moscow" description="Don't You know what to choose?"></TitleBlock>
-                    <p class="description font-sans font-thin tracking-tight text-xs sm:text-sm md:text-sm lg:text-base xl:text-xl text-center w-2/3">
+                    <p class="description font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-sm lg:text-base xl:text-xl text-center w-2/3">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Ut duis tortor vitae pellentesque egestas quam pulvinar.
                         Pellentesque porttitor velit sit pellentesque.

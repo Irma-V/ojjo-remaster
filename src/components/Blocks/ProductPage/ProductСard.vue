@@ -2,7 +2,7 @@
     <section>
         <div class="content">
             <div class="product-card-block font-sans font-thin tracking-tight text-xl">
-                <div class="product-card__wrapper flex flex-col md:flex-row justify-between">
+                <div class="product-card__wrapper flex flex-col min-[769px]:flex-row justify-between">
                     <div class="product-card-galery basis-[45%]">
                         <PhotoGaleryBlock :imagesUrl="product.images"></PhotoGaleryBlock>
                     </div>
