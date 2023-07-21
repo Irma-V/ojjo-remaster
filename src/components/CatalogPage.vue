@@ -1,35 +1,41 @@
 <template>
-    <div id="fltr" v-if="!category">
-        <FilterBlock @select-change="filterChangeHandler" />
-        <section>
-            <div class="content">
-                <div class="info w-full flex flex-row flex-wrap justify-around items-center">
-                    <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
-                    <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
-                        <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
+    <Loader v-if="loading || !items"></Loader>
+    <section v-else>
+        <div id="fltr" v-if="!category">
+            <FilterBlock @select-change="filterChangeHandler" />
+            <!-- <section> -->
+            <!-- <div class="content"> -->
+            <div class="info w-full flex flex-row flex-wrap justify-around items-center">
+                <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
+                <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
+                    <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+        </div>
+        <div id="no-products" v-else>
+            <article>
+                <div class="content">
+                    <TitleBlock v-if="items.length" :title="category" description="Category:"></TitleBlock>
+                    <p v-else class="text-center pb-[2%]">Товары по данной категории отстутствуют.</p>
+                    <div class="info w-full flex flex-row flex-wrap justify-around items-center">
+                        <div class="homeBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
+                            <!-- вернуться на шаг назад -->
+                            <ButtonDarkGray button-name="come back" @click.prevent="this.$router.go(-1)" />
+                            <!-- Вернуться на стартовую <ButtonDarkGray button-name="Homeback" @click.prevent="this.$router.push('/')" /> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-    <section v-else>
-        <div class="content">
-            <TitleBlock :title="category" description="Category:"></TitleBlock>
-            <div v-if="items.length" class="info w-full flex flex-row flex-wrap justify-around items-center">
-                <div class="homeBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
-                    <!-- вернуться на шаг назад -->
-                    <ButtonDarkGray button-name="come back" @click.prevent="this.$router.go(-1)" />
-                    <!-- Вернуться на стартовую <ButtonDarkGray button-name="Homeback" @click.prevent="this.$router.push('/')" /> -->
-                </div>
-            </div>
-            <p v-else class="text-center">Товары по данной категории отстутствуют</p>
+            </article>
         </div>
+
+        {{ count }}
+        <CatalogBlock v-if="items.length" :productCategory="productCategory" :products="items" :total="allProducts.length"
+            :filteredCount="filteredCount" :lim="this.step" @loadMore="loadMore()" />
+        <AboutItBlock v-if="items.length" />
+        <SubscriptionBlock />
     </section>
-    {{ count }}
-    <CatalogBlock v-if="items.length" :productCategory="productCategory" :products="items" :total="allProducts.length"
-        :filteredCount="filteredCount" :lim="this.step" @loadMore="loadMore()" />
-    <AboutItBlock v-if="items.length" />
-    <SubscriptionBlock />
 </template>
 
 <script>
@@ -40,6 +46,7 @@ import AboutItBlock from "./Blocks/CatalogPage/AboutItBlock.vue";
 import SubscriptionBlock from "./Blocks/generalBlocks/SubscriptionBlock.vue";
 import { getProducts, generateAllProducts } from "@/service/getAllProducts";
 import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
+import Loader from "@/components/app/Loader.vue";
 // import { addProductsForApi } from '@/database-mock'
 // import { api } from '@/api.js'
 
@@ -51,7 +58,8 @@ export default {
         CatalogBlock,
         AboutItBlock,
         SubscriptionBlock,
-        ButtonDarkGray
+        ButtonDarkGray,
+        Loader,
     },
     props: {
         productCategory: {
@@ -62,6 +70,7 @@ export default {
     },
     data() {
         return {
+            loading: true,
             allProducts: [],
             items: [],
             step: 6,
@@ -92,6 +101,7 @@ export default {
             this.filteredCount = filteredProducts.count
             this.limit += this.step
             this.offset += this.step
+            this.loading = false
         },
 
         async filterChangeHandler(event, name) {
@@ -153,14 +163,6 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-section {
-    &:first-child {
-        margin-top: 7.25rem;
-    }
-}
-</style>
 
 
 <!--  /* Удаление элемента в фильтрах, совпадающего по ключу*/

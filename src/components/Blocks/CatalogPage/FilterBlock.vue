@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <article>
         <div class="content">
             <div class="filter-block flex flex-col items-center">
                 <div class="filter__wrapper flex flex-row justify-between items-center w-full flex-wrap lg:flex-nowrap">
@@ -36,7 +36,7 @@
 
             <!-- <div class="result">{{ brands }}</div> -->
         </div>
-    </section>
+    </article>
 </template>
 
 <script>

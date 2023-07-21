@@ -42,8 +42,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-// section {
-// content {
+
 .news-block {
     .news-block__wrapper {
         .news-article {
@@ -62,6 +61,4 @@ export default {
         }
     }
 }
-
-// }
-// }</style>
+</style>

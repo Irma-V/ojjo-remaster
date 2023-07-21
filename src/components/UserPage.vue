@@ -1,5 +1,6 @@
 <template>
-    <section>
+    <Loader v-if="loading"></Loader>
+    <section v-else>
         <div class="content">
             <div class="userPage">
                 <ion-icon name="person" size="large"></ion-icon>
@@ -10,15 +11,19 @@
 </template>
 
 <script>
+import Loader from "@/components/app/Loader.vue";
 export default {
     name: "UserPage",
+    components: {
+        Loader,
+    },
+    data(){
+        return{
+            loading:true
+        }
+    },
+    mounted(){
+        this.loading = false
+    },
 }
 </script>
-
-<style scoped lang="scss">
-section {
-    &:first-child {
-        margin-top: 7.25rem;
-    }
-}
-</style>

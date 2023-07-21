@@ -1,7 +1,7 @@
 <template>
     <div>
-        <VHeader></VHeader>
-        <div class="container min-h-full max-w-[120rem] flex flex-col">
+        <VHeader :isOpen="menuState.isOpen" :iconName="menuState.iconName" @runMenuSwitcher="runMenuSwitcher"></VHeader>
+        <div class="container min-h-full max-w-[120rem] flex flex-col" @click="closeMenu">
             <main class="min-h-full flex flex-col">
                 <router-view />
             </main>
@@ -25,9 +25,12 @@ export default {
     props: {},
     data() {
         return {
-
+            menuState: {
+                isOpen: false,
+                iconName: 'menu'
+            },
         }
-    },async mounted() {
+    }, async mounted() {
         if (messages[this.$route.query.message]) {
             this.$message(messages[this.$route.query.message])
         }
@@ -35,11 +38,36 @@ export default {
         if (store.getters.infoIsEmpty) {
             await store.dispatch('auth/fetchInfo')
         }
-    },    
+    },
     computed: {
-        error(){
+        error() {
             return store.getters.error
         }
+    },
+    methods: {
+        closeMenu() {
+            if (this.menuState.isOpen === false) {
+                return
+            }
+            // console.log('надо закрыть меню');
+            this.isOpen = false
+            this.menuState = {
+                isOpen: this.isOpen,
+                iconName: this.isOpen === true ? 'close' : 'menu'
+            }
+            // console.log(this.menuState);
+            return this.menuState
+        },
+
+        runMenuSwitcher() {
+            // console.log('runMenuSwitcher');
+            this.isOpen = !this.isOpen
+            this.menuState = {
+                isOpen: this.isOpen,
+                iconName: this.isOpen === true ? 'close' : 'menu'
+            }
+            return this.menuState
+        },
     },
     watch: {
         error(fbError) {

@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <article>
         <div class="content">
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
                 <div class="catalog__wrapper flex flex-row flex-wrap justify-between items-center">
@@ -19,7 +19,7 @@
             </div>
 
         </div>
-    </section>
+    </article>
 </template>
 <script>
 import ButtonDarkGray from '@/components/Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue';

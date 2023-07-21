@@ -1,5 +1,5 @@
 <template>
-    <section v-if="products.length > 0">
+    <article v-if="products.length > 0">
         <div class="content">
             <TitleBlock title="Products You May Like" description="We've got something else for you"></TitleBlock>
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
@@ -13,7 +13,7 @@
                 <!-- </div> -->
             </div>
         </div>
-    </section>
+    </article>
     <!-- <div v-else>Nixua netu</div> -->
 </template>
 <script>
@@ -47,19 +47,19 @@ export default {
                     },
                     {
                         breakpoint: 380,
-                        settings: { slidesToShow: '1' }
+                        settings: { slidesToShow: '3' }
                     },
                     {
                         breakpoint: 600,
-                        settings: { slidesToShow: '1' }
+                        settings: { slidesToShow: '3' }
                     },
                     {
                         breakpoint: 625,
-                        settings: { slidesToShow: '1.5' }
+                        settings: { slidesToShow: '3' }
                     },
                     {
                         breakpoint: 755,
-                        settings: { slidesToShow: '2' }
+                        settings: { slidesToShow: '3' }
                     },
                     {
                         breakpoint: 950,

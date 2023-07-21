@@ -2,15 +2,15 @@
     <nav class="sidebar w-full min-[375px]:max-w-[20rem] max-[425px]:h-[100rem]">
         <div class="sidebar-content__wrapper block min-[769px]:hidden">
             <div class="sidebar-list py-[5%]">
-                <ul class="flex flex-col">
+                <ul class="flex flex-col capitalize" @click="this.$emit('openedPage')">
                     <li class="py-[2%]">
                         <router-link :to="{ name: 'home' }">
-                            menu1
+                            to counterparties
                         </router-link>
                     </li>
                     <li class="py-[2%]">
                         <router-link :to="{ name: 'home' }">
-                            menu2
+                             to designers
                         </router-link>
                     </li>
                     <li class="py-[2%]">
@@ -29,7 +29,7 @@
                 </ul>
             </div>
             <hr v-if="userIsAuth">
-            <div v-if="userIsAuth" class="sidebar-list py-[5%]">
+            <div v-if="userIsAuth" class="sidebar-list py-[5%]" @click="this.$emit('openedPage')">
                 <ul class="flex flex-row">
                     <li class="basis-1/6">
                         <router-link :to="{ name: 'user' }">
@@ -40,13 +40,12 @@
                         <router-link :to="{ name: 'favorites' }">
                             <ion-icon name="heart" size="large"></ion-icon>
                         </router-link>
-
                     </li>
                 </ul>
             </div>
 
             <hr>
-            <div class="sidebar-list py-[5%]">
+            <div class="sidebar-list py-[5%]" @click="this.$emit('openedPage')">
                 <ul class="social-media-group flex flex-row justify-between">
                     <li class="basis-1/6">
                         <img src="~@/assets/img/svg/bx_bxl-youtube.svg" class="h-4" alt="">

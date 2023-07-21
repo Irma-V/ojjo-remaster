@@ -53,11 +53,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-section {
-  &:first-child {
-    margin-top: 6.25rem;
-  }
-}
 
 .wrapper {
   .item {

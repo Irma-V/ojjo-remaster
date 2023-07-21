@@ -1,5 +1,5 @@
 <template>
-    <ButtonBlock :button-name="buttonName" button-style="dark-gray px-[5%] py-[5%] "></ButtonBlock>
+    <ButtonBlock :button-name="buttonName" button-style="dark-gray px-[5%] py-[5%]"></ButtonBlock>
 </template>
 <script>
 import ButtonBlock from './ButtonBlock.vue';

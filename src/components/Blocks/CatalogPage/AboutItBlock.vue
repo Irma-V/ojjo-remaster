@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <article>
         <div class="content">
             <div class="about-it-block px-[10%] font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-sm lg:text-base xl:text-xl">
                 <div class="about-it__wrapper flex flex-col min-[769px]:flex-row-reverse min-[769px]:justify-between">
@@ -38,7 +38,7 @@
             </div>
 
         </div>
-    </section>
+    </article>
 </template>
 <script>
 import ShowHidden from '../generalBlocks/ShowMoreComponents/ShowHidden.vue';

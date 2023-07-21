@@ -1,9 +1,11 @@
 <template>
     <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
-            <div class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
-                <NavBar :icon="menuState.iconName" @clickOnBurger="openMenu" @logout="logout" />
-                <SideBar :class="{ close: !menuState.isOpen }" @logout="logout" />
+            <div
+                class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
+                <NavBar :icon="iconName" @clickOnBurger="this.$emit('runMenuSwitcher')"
+                    @openedPage="this.$emit('runMenuSwitcher')" @logout="logout" />
+                <SideBar :class="{ close: !isOpen }" @logout="logout" @openedPage="this.$emit('runMenuSwitcher')" />
             </div>
         </div>
     </header>
@@ -22,31 +24,20 @@ export default {
         NavBar,
         SideBar,
     },
+    props: {
+        isOpen: {},
+        iconName: {},
+    },
     data() {
-        return {
-            menuState: {
-                isOpen: false,
-                iconName: 'menu'
-            },
-        }
+        return { }
     },
     mounted() {
         auth.onAuthStateChanged(async (user) => {
             await store.dispatch('auth/fetchUser', user);
-            console.log('пользователь: ',user || null);
+            console.log('пользователь: ', user || null);
         });
     },
     methods: {
-
-        openMenu() {
-            // console.log('openMenu');
-            this.isOpen = !this.isOpen
-            this.menuState = {
-                isOpen: this.isOpen,
-                iconName: this.isOpen === true ? 'close' : 'menu'
-            }
-            return this.menuState
-        },
         logout() {
             // console.log('logout');
             store.dispatch('auth/logOut')
@@ -84,6 +75,31 @@ header {
 }
 </style>
 
+
+<!-- /* Метод runMenuSwitcher перенесён в MainLayout */ 
+
+    data() {
+    //     return {
+    //         menuState: {
+    //             isOpen: false,
+    //             iconName: 'menu'
+    //         },
+    //     }
+    // },
+
+// runMenuSwitcher() {
+        //     // console.log('runMenuSwitcher');
+        //     this.isOpen = !this.isOpen            
+        //     this.menuState = {
+        //         isOpen: this.isOpen,
+        //         iconName: this.isOpen === true ? 'close' : 'menu'
+        //     }
+        //     console.log(this.menuState.isOpen);
+
+        //     return this.menuState
+        // },
+-->
+
 <!-- <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
             <div class="header-wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-6">
@@ -91,9 +107,9 @@ header {
                 <nav class="navbar flex flex-row justify-between items-center">
                     <div class="header-list hidden min-[769px]:block">
                         <ul>
-                            <li>menu1</li>
-                            <li>menu2</li>
-                            <li>menu3</li>
+                            <li>to counterparties</li>
+                            <li> to designers</li>
+                            <li>contacts</li>
                         </ul>
                     </div>
                     <div class="logo">
@@ -130,7 +146,7 @@ header {
                             </li>
                         </ul>
                     </div>
-                    <div ref="menu" @click="openMenu()" class="menu-burger block min-[769px]:hidden">
+                    <div ref="menu" @click="runMenuSwitcher()" class="menu-burger block min-[769px]:hidden">
                         <ion-icon name="menu" size="large"></ion-icon>
                     </div>
                 </nav>
@@ -141,13 +157,13 @@ header {
                         <div class="sidebar-list py-[5%]">
                             <ul class="flex flex-col">
                                 <li class="py-[2%]">
-                                    <span>menu1</span>
+                                    <span> to counterparties</span>
                                 </li>
                                 <li class="py-[2%]">
-                                    <span>menu2</span>
+                                    <span> to designers</span>
                                 </li>
                                 <li class="py-[2%]">
-                                    <span>menu3</span>
+                                    <span>contacts</span>
                                 </li>
                                 <li v-if="!isAuth" class="py-[2%]">
                                     <router-link :to="{ name: 'login' }">
@@ -222,7 +238,7 @@ header {
 //       },
 
 //     created() {
-//         if (this.openMenu) {
+//         if (this.runMenuSwitcher) {
 //             window.addEventListener('resize', () => {
 //                 this.width = window.innerWidth
 //                 if (this.width >= 768) {
@@ -246,7 +262,7 @@ header {
 //             this.isMenuOpen = false
 //         },
 
-//         openMenu() {
+//         runMenuSwitcher() {
 //             if (this.$refs.menu.firstChild.name === 'menu') {
 //                 this.$refs.menu.firstChild.name = 'close'
 //                 this.isMenuOpen = true

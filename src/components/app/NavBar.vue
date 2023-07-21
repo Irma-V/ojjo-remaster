@@ -1,15 +1,15 @@
 <template>
     <nav class="navbar flex flex-row justify-between items-center">
         <div class="header-list hidden min-[769px]:block basis-[25%]">
-            <ul class="flex flex-row justify-between">
+            <ul class="flex flex-row justify-between capitalize" @click="this.$emit('openedPage')">
                 <li>
                     <router-link :to="{ name: 'home' }">
-                        menu1
+                        to counterparties
                     </router-link>
                 </li>
                 <li>
                     <router-link :to="{ name: 'home' }">
-                        menu2
+                        to designers
                     </router-link>
                 </li>
                 <li>
@@ -19,12 +19,12 @@
                 </li>
             </ul>
         </div>
-        <div class="logo">
+        <div class="logo basis-1/3 min-[769px]:basis-auto" @click="this.$emit('openedPage')">
             <router-link :to="{ name: 'home' }">
                 <img src="~@/assets/img/logo/OJJO.png" alt="OJJO.png" />
             </router-link>
         </div>
-        <div class="header-list hidden min-[769px]:block basis-[25%]">
+        <div class="header-list hidden min-[769px]:block basis-[25%]" @click="this.$emit('openedPage')">
             <ul class="flex flex-row justify-between">
                 <li>
                     <div class="flex flex-row justify-between items-center">

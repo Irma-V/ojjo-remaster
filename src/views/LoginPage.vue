@@ -99,12 +99,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-section {
-    &:first-child {
-        margin-top: 7.25rem;
-    }
-}
-
 form {
     .input-field {
         .invalid {

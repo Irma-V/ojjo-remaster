@@ -1,6 +1,6 @@
 <template>
-    <section class="my-[7%] text-white">
-        <div class="content">
+    <article class="text-white">
+        <div class="content py-[7%]">
             <div class="offers-block">
                 <div class="offers-block__wrapper flex flex-col justify-between items-center">
                     <TitleBlock title="Visit our salons in Moscow" description="Don't You know what to choose?"></TitleBlock>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </article>
 </template>
 <script>
 import ButtonWhite from './ButtonsStyle/ButtonWhite.vue';
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-section {
+article {
     background-image: url(~@/assets/img/background/background.png);
 }
 </style>

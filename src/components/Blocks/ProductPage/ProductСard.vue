@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <article>
         <div class="content">
             <div class="product-card-block font-sans font-thin tracking-tight text-xl">
                 <div class="product-card__wrapper flex flex-col min-[769px]:flex-row justify-between">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </article>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <article>
         <div class="content">
             <div @click="this.toCamelCase">BreadCrumbs</div>
             <!-- <BBreadcrumb>
@@ -8,7 +8,7 @@
                 <BBreadcrumbItem>home</BBreadcrumbItem>
             </BBreadcrumb> -->
         </div>
-    </section>
+    </article>
 </template>
 <script>
 
