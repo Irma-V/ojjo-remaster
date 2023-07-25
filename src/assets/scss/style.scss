@@ -170,6 +170,16 @@ $weddingRing: url(~@/assets/img/background/newsArticlesBackground/weddingRing.pn
   bottom: 20rem;
 }
 
+//form
+form {
+    .input-field {
+        .invalid {
+            outline: 0.1rem solid red;
+        }
+    }
+
+}
+
 //vue-agile
 .catalog-item {
   .catalog-item__wrapper {

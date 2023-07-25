@@ -99,14 +99,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-form {
-    .input-field {
-        .invalid {
-            outline: 0.1rem solid red;
-        }
-    }
+// form {
+//     .input-field {
+//         .invalid {
+//             outline: 0.1rem solid red;
+//         }
+//     }
 
-}
+// }
 </style>
 
 <!-- /* отключенная логика auth */

@@ -11,4 +11,8 @@ export default {
     "Invalid username/password. Check the correctness of the data. Неверное имя пользователя/пароль. Проверьте корректность данных.",
   "Firebase: Error (auth/email-already-in-use).":
     "This user is already registered. Этот пользователь уже зарегистрирован.",
+
+    //database
+    // userIsNotLogged: "ТЫ ДАЖЕ НЕ ГРАЖДАНИН!",
+    // userIsNotAdmin: "ТЫ ДАЖЕ НЕ АДМИН!",
 };

@@ -34,7 +34,6 @@ export default {
     mounted() {
         auth.onAuthStateChanged(async (user) => {
             await store.dispatch('auth/fetchUser', user);
-            console.log('пользователь: ', user || null);
         });
     },
     methods: {

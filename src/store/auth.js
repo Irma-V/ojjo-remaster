@@ -52,6 +52,7 @@ export default {
         set(ref(database, `users/${uid}/info`), {
           userName: name,
           email: email,
+          userRole: 'User'
         });
       } else {
         throw new Error("Unable to register user");
@@ -85,7 +86,7 @@ export default {
     async logOut(context) {
       await signOut(auth);
       context.commit("SET_USER", null);
-    //   context.commit("clearInfo");
+      context.commit("clearInfo");
     },
 
     async fetchUser(context, user) {

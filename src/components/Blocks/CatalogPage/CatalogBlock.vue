@@ -2,7 +2,7 @@
     <article>
         <div class="content">
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
-                <div class="catalog__wrapper flex flex-row flex-wrap justify-between items-center">
+                <div class="catalog__wrapper flex flex-row flex-wrap items-center">
                     <ProductCardItem productCardItemStyle=" basis-full min-[375px]:basis-1/2 sm:basis-1/3"
                         v-for="product in products" :key="product" :product-id="product.id" :product="product.title"
                         :product-name="product.brand" :product-price="product.price + ' $'" slider-show-type='slider'

@@ -1,7 +1,10 @@
 import { createStore } from "vuex";
 import auth from "./auth";
+import info from "./info";
+import products from "./products";
 
 const store =  createStore({
+//   namespaced: true,
   state() {
     return {
       products: [],
@@ -41,6 +44,8 @@ const store =  createStore({
   },
   modules: {
     auth,
+    info,
+    products,
   },
 });
 

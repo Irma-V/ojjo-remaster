@@ -30,13 +30,29 @@ export default {
                 iconName: 'menu'
             },
         }
-    }, async mounted() {
+    },
+
+    created() {
+        if (this.runMenuSwitcher) {
+            window.addEventListener('resize', () => {
+                this.width = window.innerWidth
+                if (this.width >= 768) {
+                    // console.log('close menu');
+                    this.closeMenu();
+                }
+
+            });
+        }
+
+    },
+
+    async mounted() {        
         if (messages[this.$route.query.message]) {
             this.$message(messages[this.$route.query.message])
         }
         // if (!Object.keys(store.getters.info).length) {
         if (store.getters.infoIsEmpty) {
-            await store.dispatch('auth/fetchInfo')
+            await store.dispatch('info/fetchInfo')
         }
     },
     computed: {
@@ -74,6 +90,6 @@ export default {
             // console.log(fbError); /* содержимое ошибки попадает из ветки catch каждого метода, вызываемого из store в компонентах vue */
             this.$error(messages[fbError])
         }
-    }
+    },
 }
 </script>

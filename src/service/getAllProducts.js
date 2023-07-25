@@ -14,7 +14,6 @@ export const generateAllProducts = async function () {
     // allProducts = [...apiProducts];
     // allProducts = [...apiProducts, ...DBMockProducts];
     allProducts = [...DBMockProducts];
-
     return allProducts;
   });
   // console.log(allProducts);

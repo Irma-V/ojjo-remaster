@@ -29,8 +29,6 @@
                 </div>
             </article>
         </div>
-
-        {{ count }}
         <CatalogBlock v-if="items.length" :productCategory="productCategory" :products="items" :total="allProducts.length"
             :filteredCount="filteredCount" :lim="this.step" @loadMore="loadMore()" />
         <AboutItBlock v-if="items.length" />
@@ -47,6 +45,7 @@ import SubscriptionBlock from "./Blocks/generalBlocks/SubscriptionBlock.vue";
 import { getProducts, generateAllProducts } from "@/service/getAllProducts";
 import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
 import Loader from "@/components/app/Loader.vue";
+import store from "@/store";
 // import { addProductsForApi } from '@/database-mock'
 // import { api } from '@/api.js'
 
@@ -79,7 +78,7 @@ export default {
             category: null,
             filters: [],
             filteredProducts: [],
-            filteredCount: 0
+            filteredCount: 0,
         }
     },
     async created() {
@@ -87,7 +86,6 @@ export default {
         console.log('Категория ', this.category || 'отсутствует');
         // this.limit = this.step
         this.allProducts = await generateAllProducts()
-
     },
 
     mounted() {

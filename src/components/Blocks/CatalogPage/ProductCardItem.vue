@@ -89,7 +89,7 @@ export default {
 
     mounted(){
         // console.log(this.sliderShowTypes);
-        console.log(Object.values(this.galery));
+        // console.log(Object.values(this.galery));
     },
 }
 </script>
