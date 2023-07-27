@@ -86,7 +86,7 @@ export default {
     async logOut(context) {
       await signOut(auth);
       context.commit("SET_USER", null);
-      context.commit("clearInfo");
+    //   context.commit("clearInfo");
     },
 
     async fetchUser(context, user) {

@@ -22,12 +22,12 @@ export default {
     },
   },
   actions: {
-    updateProducts(context, toUpdate) {
+    uploadeProducts(context, toUpdate) {
       try {
         onAuthStateChanged(auth, (user) => {
           const products = ref(database, `products/`);
           let updateData = {};
-          const adminEmail = 'vermeil_irma@mail.ru';
+          const adminEmail = "vermeil_irma@mail.ru";
           if (user) {
             if (user.email === adminEmail) {
               updateData = { ...this.getters.products, ...toUpdate };
@@ -64,11 +64,22 @@ export default {
       });
     },
 
-    createProduct(context, {dataset, lastIndex}) {
+    createProduct(context, { dataset, lastIndex }) {
+      console.log("createProduct");
       try {
         console.log(dataset, lastIndex + 1);
         const product = ref(database, `products/${lastIndex + 1}`);
         update(product, dataset);
+        context.commit("setProducts", dataset);
+      } catch (error) {
+        context.commit("setError", error);
+        throw error;
+      }
+    },
+
+    updateProduct(context, {dataset, idx}) {
+      try {
+        update(ref(database,`products/${idx}`),dataset)
         context.commit("setProducts", dataset);
       } catch (error) {
         context.commit("setError", error);

@@ -11,7 +11,7 @@
       &:first-child {
         margin-top: 7.25rem;
       }
-      
+
       .content {
         margin: 2% 15%;
 
@@ -158,7 +158,7 @@ $weddingRing: url(~@/assets/img/background/newsArticlesBackground/weddingRing.pn
 
 // toast
 .toast {
-  background: #3333337f;
+  background: #1f0f6d;
   color: white;
   padding: 1%;
   outline: 0.1rem solid black;
@@ -166,18 +166,31 @@ $weddingRing: url(~@/assets/img/background/newsArticlesBackground/weddingRing.pn
   max-height: fit-content;
   position: absolute;
   z-index: 99999;
-  right: 4rem;
-  bottom: 20rem;
+  right: 2%;
+  margin: 5% 0%;
 }
 
 //form
 form {
-    .input-field {
-        .invalid {
-            outline: 0.1rem solid red;
-        }
+  .input-field {
+    .invalid {
+      outline: 0.1rem solid red;
     }
+    select {
+      outline: 0.1rem solid black;
+      border-radius: 10px;
+      padding: 2%;
+      width: 100%;
+      -webkit-user-select: none;
+      -moz-user-select: -moz-none;
+      -ms-user-select: none;
+      user-select: none;
 
+    //   -webkit-appearance: none;
+      -moz-appearance: radio-container;
+    //   appearance: none;
+    }
+  }
 }
 
 //vue-agile

@@ -37,9 +37,10 @@ export default {
         });
     },
     methods: {
-        logout() {
+        async logout() {
             // console.log('logout');
-            store.dispatch('auth/logOut')
+            await store.dispatch('auth/logOut')
+            store.commit('clearInfo')
             this.$router.push('/login?message=logout')
         },
     }

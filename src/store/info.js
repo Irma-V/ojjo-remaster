@@ -3,7 +3,6 @@ import { onValue, ref, update } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 
 export default {
-  namespaced: true,
   state: {
     info: {},
   },
@@ -13,8 +12,8 @@ export default {
     },
     // пустое ли info
     infoIsEmpty(state) {
-        return Object.keys(state.info).length <= 0
-    }
+      return Object.keys(state.info).length <= 0;
+    },
   },
   mutations: {
     setInfo(state, info) {
@@ -34,7 +33,6 @@ export default {
 
         update(info, updateData);
         context.commit("setInfo", updateData);
-        
       } catch (error) {
         context.commit("setError", error);
         throw error;
@@ -42,9 +40,11 @@ export default {
     },
 
     async fetchInfo(context) {
+      console.log(11111);
       try {
         onAuthStateChanged(auth, (user) => {
           if (user) {
+            console.log(user);
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/auth.user
             const uid = user.uid;

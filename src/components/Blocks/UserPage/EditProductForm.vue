@@ -1,0 +1,204 @@
+<template>
+    <Loader v-if="loading || !products"></Loader>
+
+    <form @submit.prevent="submitHundler()" v-else>
+        <div class="input-field">
+            <label class="font-bold">Select product: </label>
+            <select id="select" ref="select" v-model="current">
+                <option v-for="item in products" :key="item.id" :value="item.id">
+                    {{ item.title }} {{ item.brand }}, {{ item.price }} $
+                </option>
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label for="category">Category</label>
+            <input id="category" type="text" placeholder="Category name in plural" v-model.trim="category"
+                :class="{ invalid: v$.category.$dirty && v$.category.$invalid }" />
+            <small class="helper-text text-red-600" v-for="error of v$.category.$errors" :key="error.$uid">
+                invalid category: {{ error.$message }}
+            </small>
+        </div>
+        <div class="input-field">
+            <label for="title">Product</label>
+            <input id="title" type="text" placeholder="Name of the jewelry" v-model.trim="title"
+                :class="{ invalid: v$.title.$dirty && v$.title.$invalid }" />
+            <small class="helper-text text-red-600" v-for="error of v$.title.$errors" :key="error.$uid"> invalid
+                product: {{ error.$message }}</small>
+        </div>
+        <div class="input-field">
+            <label for="brand">Brand</label>
+            <input id="brand" type="text" placeholder="Dolce & Gabanna" v-model.trim="brand"
+                :class="{ invalid: v$.brand.$dirty && v$.brand.$invalid }" />
+            <small class="helper-text text-red-600" v-for="error of v$.brand.$errors" :key="error.$uid">
+                invalid brand: {{ error.$message }}
+            </small>
+        </div>
+        <div class="input-field">
+            <label for="description">Description</label>
+            <input id="description" type="text" placeholder="Information about new product" v-model.trim="description"
+                :class="{ invalid: v$.description.$dirty && v$.description.$invalid }" class="h h-40" />
+            <small class="helper-text text-red-600" v-for="error of v$.description.$errors" :key="error.$uid">
+                invalid description: {{ error.$message }}
+            </small>
+        </div>
+        <div class="input-field">
+            <label for="price">Price</label>
+            <input id="price" type="text" placeholder="price" v-model.trim="price"
+                :class="{ invalid: v$.price.$dirty && v$.price.$invalid }" />
+            <small class="helper-text text-red-600" v-for="error of v$.price.$errors" :key="error.$uid">
+                invalid price: {{ error.$message }}
+            </small>
+        </div>
+        <div class="editProductBtn">
+            <ButtonDarkGray button-name="edit product" type="submit"></ButtonDarkGray>
+        </div>
+    </form>
+</template>
+
+<script>
+import store from "@/store";
+
+import { useVuelidate } from '@vuelidate/core'
+import { required, numeric } from '@vuelidate/validators'
+
+import ButtonDarkGray from "../../Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
+import Loader from "@/components/app/Loader.vue"
+import { generateAllProducts } from "@/service/getAllProducts";
+
+export default {
+    name: "EditProductForm",
+    components: {
+        ButtonDarkGray,
+    },
+    props: {
+        products: {
+            type: Array,
+            required: true,
+        }
+    },
+    data() {
+        return {
+            loading: true,
+            // fetchProducts: [],
+
+            id: null,
+            brand: '',
+            category: '',
+            title: '',
+            description: '',
+            price: '',
+
+            discountPercentage: 0,
+            rating: 0,
+            stock: 0,
+
+            thumbnail: '/img/bracelet04_01.e96054a5.png',
+            images: [
+                "/img/bracelet04_01.e96054a5.png",
+                "/img/bracelet04_02.61fc0675.png",
+                "/img/bracelet04_03.9c951584.png"
+            ],
+
+            select: null,
+            current: null,
+
+        }
+    },
+    setup() {
+        return { v$: useVuelidate() }
+    },
+    validations() {
+        return {
+            brand: { required },
+            category: { required },
+            title: { required },
+            description: { required },
+            price: { required, numeric },
+        }
+    },
+    created() {
+        this.current = this.products[0].id
+        this.id = this.products[0].id
+    },
+    async mounted() {
+        // this.fetchProducts = await store.dispatch('products/fetchProducts')
+        M.updateTextFields()
+        this.select = M.FormSelect.init(this.$refs.select)
+
+        // this.fetchProducts = this.products
+        // this.LastIdxElem = this.fetchProducts.length - 1
+        // this.lastProductsElem = this.products[this.LastIdxElem].id
+        this.loading = false
+
+        // console.log('Индекс и ИД последнего элемента: ', this.LastIdxElem, ', ', this.lastProductsElem);
+        // console.log('Поиск индекса по ID (пример)', this.fetchProducts.findIndex(item => item.id === 115));
+
+
+    },
+    methods: {
+        async submitHundler() {
+            console.log('submitHundler');
+
+            /* Для записи ранее созданных продуктов в бд */
+            // const allProducts = await generateAllProducts()
+            // console.log(allProducts);
+            // await store.dispatch('products/uploadeProducts', allProducts)
+
+            /* Валидатор */
+            if (this.v$.$invalid) {
+                this.v$.$touch()
+                return
+            }
+
+            /* запись новых данных */
+            const dataset = {
+                id: this.id,
+                title: this.title,
+                description: this.description,
+                price: this.price,
+                discountPercentage: this.discountPercentage,
+                rating: this.rating,
+                stock: this.stock,
+                brand: this.brand,
+                category: this.category,
+                thumbnail: this.thumbnail,
+                images: this.images,
+            }
+            let idx = this.products.findIndex(item => item.id === this.id)
+            console.log(dataset, idx);
+            try {
+                await store.dispatch('products/updateProduct', { dataset, idx })
+                this.reset()
+                this.$message(`Карточка обновлена`)
+                this.$emit('updateProducts')
+            } catch (error) {
+                console.log(error);
+            }
+        },
+
+        reset() {
+            this.current = this.products[0].id
+            this.id = this.products[0].id
+        },
+
+    },
+    watch: {
+        current(value) {
+            console.log(value);
+            const selectedElem = this.products.find(item => item.id === value)
+            // console.log(selectedElem.id);
+            this.id = selectedElem.id
+            this.brand = selectedElem.brand
+            this.category = selectedElem.category
+            this.title = selectedElem.title
+            this.description = selectedElem.description
+            this.price = selectedElem.price
+
+            this.discountPercentage = selectedElem.discountPercentage
+            this.rating = selectedElem.rating
+            this.stock = selectedElem.stock
+        }
+    },
+}
+</script>
