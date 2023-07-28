@@ -6,7 +6,8 @@
                 <ion-icon name="person" size="large"></ion-icon>
                 This page can visible only users
 
-                <div class="productsEditor py-[2%] min-[769px]:px-[15%] lg:px-[25%]" v-if="info.userRole === 'Admin'">
+                <div  v-if="info.userRole === 'Admin'"
+                 class="productsEditor py-[2%] min-[769px]:px-[15%] lg:px-[25%]">
                     <div class="options flex flex-row justify-between">
                         <ButtonDarkGray @click.prevent=" addProduct()" button-name="add new product" class="basis-[45%]">
                         </ButtonDarkGray>
@@ -14,6 +15,7 @@
                         <ButtonDarkGray @click.prevent="editProduct()" button-name="edit product" class="basis-[45%]">
                         </ButtonDarkGray>
                     </div>
+                    
                     <AddProductForm v-show="add" :products="fetchProducts" @updateProducts="updateProducts">
                     </AddProductForm>
                     <EditProductForm v-show="edit" :products="fetchProducts" @updateProducts="updateProducts">
@@ -97,7 +99,7 @@ export default {
     methods: {
         async updateProducts() {
             this.fetchProducts = await store.dispatch('products/fetchProducts')
-            console.log(this.fetchProducts);
+            // console.log(this.fetchProducts);
             return this.fetchProducts
         },
         addProduct() {

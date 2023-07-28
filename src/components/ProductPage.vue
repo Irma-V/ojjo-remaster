@@ -20,8 +20,6 @@ import BreadCrumbs from './Blocks/generalBlocks/BreadCrumbs.vue';
 import SubscriptionBlock from './Blocks/generalBlocks/SubscriptionBlock.vue';
 import RelatedProducts from './Blocks/ProductPage/RelatedProducts.vue';
 import ProductCard from './Blocks/ProductPage/ProductСard.vue'
-// import { getProducts } from "../service/getAllProducts"
-import { generateAllProducts } from "../service/getAllProducts"
 import Loader from "@/components/app/Loader.vue";
 
 export default {

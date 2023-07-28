@@ -1,5 +1,5 @@
 import { auth, database } from "@/main";
-import { ref, onValue, update, child, set, push } from "firebase/database";
+import { ref, onValue, update, remove } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 
 export default {
@@ -77,14 +77,26 @@ export default {
       }
     },
 
-    updateProduct(context, {dataset, idx}) {
+    updateProduct(context, { dataset, idx }) {
       try {
-        update(ref(database,`products/${idx}`),dataset)
+        update(ref(database, `products/${idx}`), dataset);
         context.commit("setProducts", dataset);
       } catch (error) {
         context.commit("setError", error);
         throw error;
       }
+    },
+
+    deleteProduct(context, idx) {
+      //   if (idx > 30) {
+      try {
+        remove(ref(database, `products/${idx}`));
+        context.commit("setProducts");
+      } catch (error) {
+        context.commit("setError", error);
+        throw error;
+      }
+      //   } else { console.log("Иди нахуй")}
     },
   },
 };

@@ -40,11 +40,10 @@ export default {
     },
 
     async fetchInfo(context) {
-      console.log(11111);
       try {
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            console.log(user);
+            // console.log(user);
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/auth.user
             const uid = user.uid;

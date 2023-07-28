@@ -1125,6 +1125,8 @@ export const services = [
   },
 ];
 
+export const  filterTitles = ['Brands', 'Price', 'Category', 'To Whom', 'Season', 'The Event']
+
 /* // example MAP
 const array = [
   {

@@ -60,6 +60,7 @@ export default {
                 this.isVisiable = false
             }
         },
+
         closeSelect() {
             // if (this.isVisible) {
             //     return !this.isVisible
@@ -67,6 +68,7 @@ export default {
             // else
             this.isVisiable = false
         },
+        
         selectOption(currentOption) {
             // console.log(currentOption);
             // return currentOption.name

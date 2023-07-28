@@ -1,7 +1,7 @@
 <template>
     <Loader v-if="loading || !products"></Loader>
 
-    <form @submit.prevent="submitHundler()" v-else>
+    <form v-else>
         <div class="input-field">
             <label class="font-bold">Select product: </label>
             <select id="select" ref="select" v-model="current">
@@ -23,8 +23,11 @@
             <label for="title">Product</label>
             <input id="title" type="text" placeholder="Name of the jewelry" v-model.trim="title"
                 :class="{ invalid: v$.title.$dirty && v$.title.$invalid }" />
-            <small class="helper-text text-red-600" v-for="error of v$.title.$errors" :key="error.$uid"> invalid
-                product: {{ error.$message }}</small>
+
+
+            <small class="helper-text text-red-600" v-for="error of v$.title.$errors" :key="error.$uid">
+                invalid product: {{ error.$message }}
+            </small>
         </div>
         <div class="input-field">
             <label for="brand">Brand</label>
@@ -50,8 +53,13 @@
                 invalid price: {{ error.$message }}
             </small>
         </div>
-        <div class="editProductBtn">
-            <ButtonDarkGray button-name="edit product" type="submit"></ButtonDarkGray>
+        <div class="options flex flex-row justify-between">
+            <div class="editProductBtn basis-[45%] h-auto">
+                <ButtonDarkGray button-name="edit product" type="submit" @click.prevent="optionEdit()"></ButtonDarkGray>
+            </div>
+            <div class="editProductBtn basis-[45%] h-auto">
+                <ButtonDarkGray button-name="delete product" type="submit" @click.prevent="optionDel()"></ButtonDarkGray>
+            </div>
         </div>
     </form>
 </template>
@@ -89,16 +97,16 @@ export default {
             description: '',
             price: '',
 
-            discountPercentage: 0,
-            rating: 0,
-            stock: 0,
+            // discountPercentage: 0,
+            // rating: 0,
+            // stock: 0,
 
-            thumbnail: '/img/bracelet04_01.e96054a5.png',
-            images: [
-                "/img/bracelet04_01.e96054a5.png",
-                "/img/bracelet04_02.61fc0675.png",
-                "/img/bracelet04_03.9c951584.png"
-            ],
+            // thumbnail: '/img/bracelet04_01.e96054a5.png',
+            // images: [
+            //     "/img/bracelet04_01.e96054a5.png",
+            //     "/img/bracelet04_02.61fc0675.png",
+            //     "/img/bracelet04_03.9c951584.png"
+            // ],
 
             select: null,
             current: null,
@@ -125,25 +133,11 @@ export default {
         // this.fetchProducts = await store.dispatch('products/fetchProducts')
         M.updateTextFields()
         this.select = M.FormSelect.init(this.$refs.select)
-
-        // this.fetchProducts = this.products
-        // this.LastIdxElem = this.fetchProducts.length - 1
-        // this.lastProductsElem = this.products[this.LastIdxElem].id
         this.loading = false
-
-        // console.log('Индекс и ИД последнего элемента: ', this.LastIdxElem, ', ', this.lastProductsElem);
-        // console.log('Поиск индекса по ID (пример)', this.fetchProducts.findIndex(item => item.id === 115));
-
-
     },
     methods: {
-        async submitHundler() {
-            console.log('submitHundler');
-
-            /* Для записи ранее созданных продуктов в бд */
-            // const allProducts = await generateAllProducts()
-            // console.log(allProducts);
-            // await store.dispatch('products/uploadeProducts', allProducts)
+        async optionEdit() {
+            console.log('optionEdit');
 
             /* Валидатор */
             if (this.v$.$invalid) {
@@ -157,13 +151,13 @@ export default {
                 title: this.title,
                 description: this.description,
                 price: this.price,
-                discountPercentage: this.discountPercentage,
-                rating: this.rating,
-                stock: this.stock,
+                // discountPercentage: this.discountPercentage,
+                // rating: this.rating,
+                // stock: this.stock,
                 brand: this.brand,
                 category: this.category,
-                thumbnail: this.thumbnail,
-                images: this.images,
+                // thumbnail: this.thumbnail,
+                // images: this.images,
             }
             let idx = this.products.findIndex(item => item.id === this.id)
             console.log(dataset, idx);
@@ -177,6 +171,31 @@ export default {
             }
         },
 
+        async optionDel() {
+            console.log('optionDel');
+
+            /* Валидатор */
+            if (this.v$.$invalid) {
+                this.v$.$touch()
+                return
+            }
+
+            let idx = this.products.findIndex(item => item.id === this.id)
+            if (idx > 30) {
+                try {
+                    await store.dispatch('products/deleteProduct', idx)
+                    this.reset()
+                    this.$message(`Карточка удалена`)
+                    this.$emit('updateProducts')
+                } catch (error) {
+                    console.log(error);
+                }
+            } else {
+                console.log("Иди нахуй");
+                this.$message(`Данную карточку нельзя удалить`)
+            }
+        },
+
         reset() {
             this.current = this.products[0].id
             this.id = this.products[0].id
@@ -185,9 +204,10 @@ export default {
     },
     watch: {
         current(value) {
-            console.log(value);
-            const selectedElem = this.products.find(item => item.id === value)
+            // console.log(value);
             // console.log(selectedElem.id);
+
+            const selectedElem = this.products.find(item => item.id === value)
             this.id = selectedElem.id
             this.brand = selectedElem.brand
             this.category = selectedElem.category
@@ -195,9 +215,9 @@ export default {
             this.description = selectedElem.description
             this.price = selectedElem.price
 
-            this.discountPercentage = selectedElem.discountPercentage
-            this.rating = selectedElem.rating
-            this.stock = selectedElem.stock
+            // this.discountPercentage = selectedElem.discountPercentage
+            // this.rating = selectedElem.rating
+            // this.stock = selectedElem.stock
         }
     },
 }

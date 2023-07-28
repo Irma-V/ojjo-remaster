@@ -57,10 +57,9 @@
 import ButtonDarkGray from '../generalBlocks/ButtonsStyle/ButtonDarkGray.vue';
 import ButtonWhite from '../generalBlocks/ButtonsStyle/ButtonWhite.vue';
 import PhotoGaleryBlock from './PhotoGaleryBlock.vue';
-// import { products } from '@/database-mock';
-// import { api } from '@/api.js'
-import { generateAllProducts } from "../../../service/getAllProducts";
 
+import store from "@/store";
+import { mapGetters } from "vuex"
 
 export default {
     name: "ProductСard",
@@ -84,6 +83,12 @@ export default {
     created() {
         this.loadProduct()
     },
+    computed: {
+        ...mapGetters({
+            products: 'products/products'
+        }),
+    },
+
     watch: {
         productId: function () {
             this.loadProduct()
@@ -92,18 +97,18 @@ export default {
 
     methods: {
         async loadProduct() {
-            // const res =  await api.products.getProductById(this.productId);
-            // console.log(res);
-            // this.product = res;
-
-            let products = await generateAllProducts().then(result => result)
-            // console.log(products);
+            let products = await store.dispatch('products/fetchProducts')
             this.product = products.find(product => product.id == this.productId)
-            // console.log(this.product);
         }
-
-
     }
 }
 </script>
 <style scoped lang="scss"></style>
+
+<!-- получение продукта по id (логика убрана из метода loadProduct())
+            // const res =  await api.products.getProductById(this.productId);
+            // console.log(res);
+            // this.product = res;
+            // console.log(products);
+            // console.log(this.product);
+-->

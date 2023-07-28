@@ -2,17 +2,15 @@
     <Loader v-if="loading || !items"></Loader>
     <section v-else>
         <div id="fltr" v-if="!category">
-            <FilterBlock @select-change="filterChangeHandler" />
-            <!-- <section> -->
-            <!-- <div class="content"> -->
-            <div class="info w-full flex flex-row flex-wrap justify-around items-center">
-                <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
-                <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
-                    <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
+            <article>
+                <FilterBlock @select-change="filterChangeHandler" :products="allProducts" :filterTitles="filterTitles" />
+                <div class="info w-full flex flex-row flex-wrap justify-around items-center">
+                    <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
+                    <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
+                        <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
+                    </div>
                 </div>
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
+            </article>
         </div>
         <div id="no-products" v-else>
             <article>
@@ -29,9 +27,11 @@
                 </div>
             </article>
         </div>
-        <CatalogBlock v-if="items.length" :productCategory="productCategory" :products="items" :total="allProducts.length"
+
+        <CatalogBlock v-if="allProducts" :productCategory="productCategory" :products="items" :total="allProducts.length"
             :filteredCount="filteredCount" :lim="this.step" @loadMore="loadMore()" />
-        <AboutItBlock v-if="items.length" />
+
+        <AboutItBlock v-if="allProducts" />
         <SubscriptionBlock />
     </section>
 </template>
@@ -42,12 +42,14 @@ import FilterBlock from "./Blocks/CatalogPage/FilterBlock.vue";
 import CatalogBlock from "./Blocks/CatalogPage/CatalogBlock.vue";
 import AboutItBlock from "./Blocks/CatalogPage/AboutItBlock.vue";
 import SubscriptionBlock from "./Blocks/generalBlocks/SubscriptionBlock.vue";
-import { getProducts, generateAllProducts } from "@/service/getAllProducts";
 import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
 import Loader from "@/components/app/Loader.vue";
+
 import store from "@/store";
-// import { addProductsForApi } from '@/database-mock'
-// import { api } from '@/api.js'
+import { mapGetters } from "vuex"
+
+import { getProducts } from "@/service/getAllProducts";
+import { filterTitles } from '@/database-mock'
 
 export default {
     name: "CatalogPage",
@@ -79,22 +81,34 @@ export default {
             filters: [],
             filteredProducts: [],
             filteredCount: 0,
+            filterTitles: [],
         }
     },
     async created() {
         this.category = this.productCategory
         console.log('Категория ', this.category || 'отсутствует');
-        // this.limit = this.step
-        this.allProducts = await generateAllProducts()
+    },
+    computed: {
+        ...mapGetters({
+            products: 'products/products'
+        }),
     },
 
-    mounted() {
+    async mounted() {
+        this.filterTitles = filterTitles
+        await this.updateProducts()
         this.loadMore()
     },
 
     methods: {
+        async updateProducts() {
+            this.allProducts = await store.dispatch('products/fetchProducts')
+            // console.log(this.allProducts);
+            return this.allProducts
+        },
+
         async loadMore() {
-            let filteredProducts = await getProducts(this.getFullFilters())
+            let filteredProducts = getProducts(this.allProducts, this.getFullFilters())
             this.items = filteredProducts.result
             this.filteredCount = filteredProducts.count
             this.limit += this.step
@@ -129,12 +143,6 @@ export default {
             this.limit = this.step
             this.offset = 0
             this.loadMore()
-            // let filteredProducts = await getProducts(this.getFullFilters())
-            // this.filteredCount = filteredProducts.count
-            // this.items = filteredProducts.result
-
-            // this.limit += this.step
-            // this.offset += this.step
         },
 
         getFullFilters() {
@@ -211,6 +219,9 @@ export default {
   -->
 
 <!-- /* Получение обновленного каталога посредством API через подкл-е к https://dummyjson.com (логика отключена и убрана из  filterChangeHandler)*/
+            // import { api } from '@/api.js'
+
+
             //   api.products.getProducts(this.getFullFilters()).then((res) => {
             //       this.items = res.products
             //       this.offset += res.products.length
