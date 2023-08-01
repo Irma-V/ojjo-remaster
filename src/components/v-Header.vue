@@ -15,8 +15,8 @@
 // import { api } from '@/api';
 import { auth } from '@/main'
 import store from '@/store'
-import NavBar from "@/components/app/NavBar";
-import SideBar from "@/components/app/SideBar";
+import NavBar from "@/components/app/NavBar.vue";
+import SideBar from "@/components/app/SideBar.vue";
 
 export default {
     name: "VHeader",

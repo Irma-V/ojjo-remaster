@@ -6,7 +6,7 @@
     :productImg_url="productImg_url" :productGalery_url="productGalery_url" :productName="productName"
     :productDescription="productDescription" :productPrice="productPrice">
   </ProductCard> -->
-        <ProductCard :productId="productId">
+        <ProductCard :productId="productId" :userId="userId">
         </ProductCard>
         <AboutItBlock></AboutItBlock>
         <RelatedProducts :productId="productId"></RelatedProducts>
@@ -21,6 +21,10 @@ import SubscriptionBlock from './Blocks/generalBlocks/SubscriptionBlock.vue';
 import RelatedProducts from './Blocks/ProductPage/RelatedProducts.vue';
 import ProductCard from './Blocks/ProductPage/ProductСard.vue'
 import Loader from "@/components/app/Loader.vue";
+
+import { auth } from "@/main";
+import store from '@/store';
+
 
 export default {
     name: "ProductPage",
@@ -43,11 +47,19 @@ export default {
 
     data() {
         return {
-
+            userId: '',
         }
     },
 
-    mounted() {
+    async mounted() {
+        auth.onAuthStateChanged(async (user) => {
+            await store.dispatch('auth/fetchUser', user);
+            if (user !== null) {
+                this.userId=user.uid
+                console.log(this.userId);
+            }
+        });
+
         console.log("id текущего товара: ", this.productId);
     },
 };

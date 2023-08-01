@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import TitleBlock from "@/components/Blocks/generalBlocks/TitleBlock.vue";
+import TitleBlock from "./Blocks/generalBlocks/TitleBlock.vue";
 import FilterBlock from "./Blocks/CatalogPage/FilterBlock.vue";
 import CatalogBlock from "./Blocks/CatalogPage/CatalogBlock.vue";
 import AboutItBlock from "./Blocks/CatalogPage/AboutItBlock.vue";

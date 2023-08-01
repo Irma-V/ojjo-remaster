@@ -53,6 +53,47 @@
                 invalid price: {{ error.$message }}
             </small>
         </div>
+
+        <VAccordion>
+            <template v-slot:accordionTitle>
+                Additionally
+            </template>
+
+            <template v-slot:accordionContent>
+                <div class="additional-fields px-[1%] flex flex-col justify-between h-[18rem]">
+                    <div class="input-field">
+                        <label for="discountPercentage">Discount percentage</label>
+                        <input id="discountPercentage" type="text" placeholder="discountPercentage"
+                            v-model.trim="discountPercentage"
+                            :class="{ invalid: v$.discountPercentage.$dirty && v$.discountPercentage.$invalid }" />
+                        <small class="helper-text text-red-600" v-for="error of v$.discountPercentage.$errors"
+                            :key="error.$uid">
+                            invalid Discount percentage: {{ error.$message }}
+                        </small>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="rating">rating</label>
+                        <input id="rating" type="text" placeholder="rating" v-model.trim="rating"
+                            :class="{ invalid: v$.rating.$dirty && v$.rating.$invalid }" />
+                        <small class="helper-text text-red-600" v-for="error of v$.rating.$errors" :key="error.$uid">
+                            invalid rating: {{ error.$message }}
+                        </small>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="stock">stock</label>
+                        <input id="stock" type="text" placeholder="discountPercentage" v-model.trim="stock"
+                            :class="{ invalid: v$.stock.$dirty && v$.stock.$invalid }" />
+                        <small class="helper-text text-red-600" v-for="error of v$.stock.$errors" :key="error.$uid">
+                            invalid stock: {{ error.$message }}
+                        </small>
+                    </div>
+                    
+                </div>
+            </template>
+        </VAccordion>
+
         <div class="options flex flex-row justify-between">
             <div class="editProductBtn basis-[45%] h-auto">
                 <ButtonDarkGray button-name="edit product" type="submit" @click.prevent="optionEdit()"></ButtonDarkGray>
@@ -72,12 +113,14 @@ import { required, numeric } from '@vuelidate/validators'
 
 import ButtonDarkGray from "../../Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
 import Loader from "@/components/app/Loader.vue"
-import { generateAllProducts } from "@/service/getAllProducts";
+import VAccordion from "../../Blocks/generalBlocks/ShowMoreComponents/v-Accordion.vue"
+// import { generateAllProducts } from "@/service/getAllProducts";
 
 export default {
     name: "EditProductForm",
     components: {
         ButtonDarkGray,
+        VAccordion
     },
     props: {
         products: {
@@ -123,6 +166,11 @@ export default {
             title: { required },
             description: { required },
             price: { required, numeric },
+
+            /* Additionally: */
+            discountPercentage: { required, numeric },
+            rating: { required, numeric },
+            stock: { required, numeric },
         }
     },
     created() {
@@ -191,7 +239,7 @@ export default {
                     console.log(error);
                 }
             } else {
-                console.log("Иди нахуй");
+                console.log("Данную карточку нельзя удалить");
                 this.$message(`Данную карточку нельзя удалить`)
             }
         },
@@ -215,9 +263,10 @@ export default {
             this.description = selectedElem.description
             this.price = selectedElem.price
 
-            // this.discountPercentage = selectedElem.discountPercentage
-            // this.rating = selectedElem.rating
-            // this.stock = selectedElem.stock
+            /* Additionally: */
+            this.discountPercentage = selectedElem.discountPercentage
+            this.rating = selectedElem.rating
+            this.stock = selectedElem.stock
         }
     },
 }

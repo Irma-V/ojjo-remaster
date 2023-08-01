@@ -88,7 +88,6 @@ export default {
     },
 
     deleteProduct(context, idx) {
-      //   if (idx > 30) {
       try {
         remove(ref(database, `products/${idx}`));
         context.commit("setProducts");
@@ -96,7 +95,16 @@ export default {
         context.commit("setError", error);
         throw error;
       }
-      //   } else { console.log("Иди нахуй")}
+    },
+
+    async addToBasket(context, data) {
+      const uid = data.userId;
+      const createBasket = push(ref(database, `users/${uid}/info/basket`));
+      let productId = data.productId;
+      update(ref(database, `users/${uid}/info/basket/${createBasket.key}`), {
+        productId,
+      });
+      context.commit("setInfo", data);
     },
   },
 };

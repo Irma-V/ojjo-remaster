@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar flex flex-row justify-between items-center">
         <div class="header-list hidden min-[769px]:block basis-[25%]">
-            <ul class="flex flex-row justify-between capitalize" @click="this.$emit('openedPage')">
+            <ul class="flex flex-row justify-between capitalize" @click.stop="this.$emit('openedPage')">
                 <li>
                     <router-link :to="{ name: 'home' }">
                         to counterparties
@@ -19,12 +19,12 @@
                 </li>
             </ul>
         </div>
-        <div class="logo basis-1/3 min-[769px]:basis-auto" @click="this.$emit('openedPage')">
+        <div class="logo basis-1/3 min-[769px]:basis-auto">
             <router-link :to="{ name: 'home' }">
                 <img src="~@/assets/img/logo/OJJO.png" alt="OJJO.png" />
             </router-link>
         </div>
-        <div class="header-list hidden min-[769px]:block basis-[25%]" @click="this.$emit('openedPage')">
+        <div class="header-list hidden min-[769px]:block basis-[25%]" @click.stop="this.$emit('openedPage')">
             <ul class="flex flex-row justify-between">
                 <li>
                     <div class="flex flex-row justify-between items-center">
@@ -53,7 +53,7 @@
                 </li>
             </ul>
         </div>
-        <div @click.prevent="$emit('clickOnBurger')" class="menu-burger block min-[769px]:hidden">
+        <div @click.stop="$emit('clickOnBurger')" class="menu-burger block min-[769px]:hidden">
             <ion-icon :name="icon" size="large"></ion-icon>
         </div>
     </nav>

@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 import auth from "./auth";
 import info from "./info";
 import products from "./products";
+import baskets from "./baskets";
 
 const store =  createStore({
 //   namespaced: true,
@@ -46,6 +47,7 @@ const store =  createStore({
     auth,
     info,
     products,
+    baskets,
   },
 });
 

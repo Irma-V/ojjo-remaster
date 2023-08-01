@@ -41,7 +41,8 @@
                                         <ButtonDarkGray button-name="buy"></ButtonDarkGray>
                                     </div>
                                     <div class="buttons-item buttons-item basis-1/2">
-                                        <ButtonWhite button-name="add to cart"></ButtonWhite>
+                                        <ButtonWhite button-name="add to basket" @click.prevent="addToBasket" type="submit">
+                                        </ButtonWhite>
                                     </div>
                                 </div>
                             </div>
@@ -73,6 +74,9 @@ export default {
             type: String,
             // required: true, 
             default: null,
+        },
+        userId: {
+            type: String,
         }
     },
     data() {
@@ -85,21 +89,35 @@ export default {
     },
     computed: {
         ...mapGetters({
-            products: 'products/products'
+            products: 'products/products',
+            baskets: 'basket/baskets',
+            info: 'info'
         }),
     },
-
     watch: {
         productId: function () {
             this.loadProduct()
         }
     },
-
     methods: {
         async loadProduct() {
             let products = await store.dispatch('products/fetchProducts')
             this.product = products.find(product => product.id == this.productId)
-        }
+        },
+
+        async addToBasket() {
+            console.log('addToBasket');
+            let formData = {
+                productId: this.productId,
+                userId: this.userId || null
+            }
+            console.log(formData);
+            try {
+                await store.dispatch('baskets/addToBasket', formData)
+            } catch (error) {
+                console.log(error);
+            }
+        },
     }
 }
 </script>

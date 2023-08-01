@@ -9,6 +9,7 @@ import {
   browserLocalPersistence,
 } from "firebase/auth";
 import { ref, set } from "firebase/database";
+import basket from "./baskets";
 
 export default {
   namespaced: true,
@@ -23,9 +24,9 @@ export default {
       return state.user;
     },
     userIsAuth(state) {
-        // console.log(state.user.loggedIn, 2222222);
-        return state.user.loggedIn
-    }
+      // console.log(state.user.loggedIn, 2222222);
+      return state.user.loggedIn;
+    },
   },
   mutations: {
     // SET_LOGGED_IN устанавливает для свойства loggedIn в state.user значение, которое было передано ему.
@@ -52,7 +53,8 @@ export default {
         set(ref(database, `users/${uid}/info`), {
           userName: name,
           email: email,
-          userRole: 'User'
+          userRole: "User",
+          basket: {},
         });
       } else {
         throw new Error("Unable to register user");
@@ -71,7 +73,7 @@ export default {
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            context.commit('setError', error.message)
+            context.commit("setError", error.message);
           });
       } else {
         throw new Error("login failed");
@@ -86,7 +88,7 @@ export default {
     async logOut(context) {
       await signOut(auth);
       context.commit("SET_USER", null);
-    //   context.commit("clearInfo");
+      //   context.commit("clearInfo");
     },
 
     async fetchUser(context, user) {
