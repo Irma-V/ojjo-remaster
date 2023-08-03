@@ -1,12 +1,12 @@
 <template>
-    <article class="m-[2%]">
+    <article class="mx-[2%]">
         <TitleBlock title="products editor" description=""></TitleBlock>
-        <div class="productsEditor py-[2%] min-[769px]:px-[15%] lg:px-[25%]">
+        <div class="productsEditor py-[2%] min-[769px]:px-[15%] lg:px-[20%]">
             <div class="options flex flex-row justify-between">
-                <ButtonDarkGray @click.prevent=" addProduct()" button-name="add new product" class="basis-[45%]">
+                <ButtonDarkGray @click.prevent=" addProduct()" button-name="add new product" class="add-new basis-[45%]">
                 </ButtonDarkGray>
 
-                <ButtonDarkGray @click.prevent="editProduct()" button-name="edit product" class="basis-[45%]">
+                <ButtonDarkGray @click.prevent="editProduct()" button-name="edit product" class="edit-current basis-[45%]">
                 </ButtonDarkGray>
             </div>
 
@@ -76,3 +76,8 @@ export default {
     },
 }
 </script>
+<style scoped lang="scss">
+.add-new, .edit-current{
+    height: auto;
+}
+</style>

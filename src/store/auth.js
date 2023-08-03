@@ -9,7 +9,6 @@ import {
   browserLocalPersistence,
 } from "firebase/auth";
 import { ref, set } from "firebase/database";
-import basket from "./baskets";
 
 export default {
   namespaced: true,

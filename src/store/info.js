@@ -26,7 +26,7 @@ export default {
   actions: {
     async updateInfo(context, toUpdate) {
       try {
-        const uid = await context.dispatch("getUid");
+        const uid = await context.dispatch("auth/getUid");
         const info = ref(database, `users/${uid}/info`);
         const updateData = { ...this.getters.info, ...toUpdate };
         // console.log(updateData);

@@ -33,7 +33,7 @@
                 <ul class="flex flex-row">
                     <li class="basis-1/6">
                         <router-link :to="{ name: 'user' }">
-                            <ion-icon name="person" size="large"></ion-icon>
+                            <ion-icon name="person" size="large"></ion-icon> {{ userName }}
                         </router-link>
                     </li>
                     <li class="basis-1/6">
@@ -74,11 +74,13 @@ import { mapGetters } from 'vuex';
 export default {
     name: "SideBar",
     components: {},
-    props: {},
+    props: {
+        userName:{
+            type: String,
+        },
+    },
     data() {
-        return {
-
-        }
+        return {}
     },
 
     computed: {

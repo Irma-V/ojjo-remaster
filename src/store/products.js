@@ -34,11 +34,11 @@ export default {
               update(products, updateData);
               context.commit("setProducts", updateData);
             } else {
-              console.log("не админ!");
+              console.log("пользователь - не админ");
               return;
             }
           } else {
-            console.log("не залогинен!");
+            console.log("пользователь не залогинен");
             return;
           }
         });
@@ -97,14 +97,5 @@ export default {
       }
     },
 
-    async addToBasket(context, data) {
-      const uid = data.userId;
-      const createBasket = push(ref(database, `users/${uid}/info/basket`));
-      let productId = data.productId;
-      update(ref(database, `users/${uid}/info/basket/${createBasket.key}`), {
-        productId,
-      });
-      context.commit("setInfo", data);
-    },
   },
 };

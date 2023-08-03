@@ -68,11 +68,13 @@ export default {
     props: {
         icon: {
             type: String,
-        }
+        },
+        userName:{
+            type: String,
+        },
     },
     data() {
         return {
-            userName: '',
         }
     },
     computed: {

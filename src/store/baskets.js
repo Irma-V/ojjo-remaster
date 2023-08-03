@@ -1,6 +1,6 @@
-import { database } from "@/main";
+import { auth, database } from "@/main";
 import { onValue, push, ref, child, update, set } from "firebase/database";
-// import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default {
   namespaced: true,
@@ -19,55 +19,56 @@ export default {
     setBaskets(state, baskets) {
       state.baskets = baskets;
     },
+    clearBaskets(state) {
+      state.baskets = {};
+    },
   },
   actions: {
-    fetchBaskets(context) {},
+    createBaskets(context) {
+      //   console.log(context.getters.basketsIsEmpty);
+      try {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            let getData = {
+              uid: user.uid,
+            //   products: [],
+              basketId: user.uid.slice(15),
+            };
+
+            let setData = {
+              basketId: getData.basketId,
+            //   products: getData.products,
+            };
+            set(ref(database, `baskets/${getData.uid}`), setData);
+            context.commit("setBaskets", getData);
+
+            return;
+          }
+        });
+      } catch (error) {}
+    },
+
+    fetchBaskets(context) {
+      return new Promise((resolve, reject) => {
+        try {
+          const baskets = ref(database, `baskets`);
+          onValue(baskets, (snapshot) => {
+            const data = snapshot.val();
+            context.commit("setBaskets", data);
+            return resolve(data);
+          });
+        } catch (error) {
+          context.commit("setError", error);
+          return reject(error);
+        }
+      });
+    },
 
     async addToBasket(context, data) {
       console.log("полученные данные: ", data.productId, data.userId);
       try {
         if (data.userId !== null) {
-          /* записать отдельно bsketID и id товара*/
-          const uid = data.userId;
-        //   const createBasket = push(ref(database, `users/${uid}/info/basket`));
-        //   let products = [];
-        //   products.push(data.productId);
-        //   console.log(products);
-        //   let basketData = {
-        //     basketid: `${createBasket.key}`,
-        //     products: products,
-        //   };
-        //   update(ref(database, `users/${uid}/info/basket/`), basketData);
-        //   context.commit("setBaskets", basketData);
-          
-          const nextProductIdx = Object.keys(Object.values(Object.values(this.state.info)[0].basket)[1]).length
-        //   const productId = data.productId
-          console.log(nextProductIdx)
-          // console.log(this.state);
-          // console.log(data.productId);
-        //   update(push(ref(database, `users/${uid}/info/basket/products/`)), productId)
-
-          //   const uid = data.userId;
-          //   const createBasket = push(ref(database, `users/${uid}/info/basket`));
-          //   const baskets = push(ref(database,`baskets/${uid}`))
-          //   let productId = data.productId
-          //   update(ref(database, `users/${uid}/info/basket/${createBasket.key}`), {productId});
-          //     context.commit("setBaskets", data);
-
-          //   let addProduct = data.productId;
-          //   console.log(addProduct);
-
-          //   const basketData = {
-          //     uid: data.userId,
-          //     productId: data.productId,
-          //   };
-
-          //   const productKey = push(child(ref(database), `baskets`)).key;
-
-          //   const updates = {};
-          //   updates['/baskets/' + productKey] = basketData;
-          //   updates['/users/'+ data.userId+'/info/basket/'+ productKey] = basketData
-          //   return update(ref(database), updates)
+            push(ref(database, `baskets/${data.userId}/products`), data.productId);
         } else {
           console.log(
             "гостю можно предложить зарегаться или создать ячейку для неавторизованного пользователя"

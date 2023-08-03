@@ -4,8 +4,10 @@
             <div
                 class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
                 <NavBar :icon="iconName" @clickOnBurger="this.$emit('runMenuSwitcher')"
-                    @openedPage="this.$emit('runMenuSwitcher')" @logout="logout" />
-                <SideBar :class="{ close: !isOpen }" @logout="logout" @openedPage="this.$emit('runMenuSwitcher')" />
+                    @openedPage="this.$emit('runMenuSwitcher')" @logout="logout" :userName="userName" />
+
+                <SideBar :class="{ close: !isOpen }" @logout="logout" @openedPage="this.$emit('runMenuSwitcher')"
+                    :userName="userName" />
             </div>
         </div>
     </header>
@@ -29,19 +31,25 @@ export default {
         iconName: {},
     },
     data() {
-        return { }
+        return {
+            userName: ''
+        }
     },
     mounted() {
         auth.onAuthStateChanged(async (user) => {
-            await store.dispatch('auth/fetchUser', user);
+            if (user) {
+                await store.dispatch('auth/fetchUser', user);
+                this.userName = user.displayName
+            }
         });
     },
     methods: {
         async logout() {
             // console.log('logout');
             await store.dispatch('auth/logOut')
-            store.commit('clearInfo')
             this.$router.push('/login?message=logout')
+            this.userName = ''
+            store.commit('clearInfo')
         },
     }
 }

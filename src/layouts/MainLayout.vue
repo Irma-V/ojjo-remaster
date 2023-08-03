@@ -13,8 +13,11 @@
 <script>
 import FooterBlock from "@/components/v-Footer.vue";
 import VHeader from "@/components/v-Header.vue";
-import store from '@/store';
 import messages from '@/utils/messages'
+
+import store from '@/store';    
+import { mapGetters } from "vuex";
+import { generateAllProducts } from "@/service/getAllProducts";
 
 export default {
     name: "MainLayout",
@@ -49,13 +52,26 @@ export default {
     async mounted() {        
         if (messages[this.$route.query.message]) {
             this.$message(messages[this.$route.query.message])
-        }
-        // if (!Object.keys(store.getters.info).length) {}
-        if (store.getters.infoIsEmpty) {
+        }        
+        if (this.infoIsEmpty) {
             await store.dispatch('fetchInfo')
+        }
+        if (this.basketsIsEmpty) {
+            // await store.dispatch('baskets/createBaskets')
+            await store.dispatch('baskets/fetchBaskets')
+        }
+        if (this.productsIsEmpty) {
+            const allProducts = await generateAllProducts()
+            // console.log(allProducts);
+            await store.dispatch('products/uploadeProducts', allProducts)
         }
     },
     computed: {
+        ...mapGetters({
+            infoIsEmpty: 'infoIsEmpty',
+            basketsIsEmpty: 'baskets/basketsIsEmpty',
+            productsIsEmpty: 'products/productsIsEmpty'
+        }),
         error() {
             return store.getters.error
         }

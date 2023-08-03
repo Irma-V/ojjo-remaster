@@ -28,8 +28,8 @@
         </div>
         <div class="input-field">
             <label for="description">Description</label>
-            <input id="description" type="text" placeholder="Information about new product" v-model.trim="description"
-                :class="{ invalid: v$.description.$dirty && v$.description.$invalid }" class="h h-40" />
+            <textarea id="description" type="text" placeholder="Information about new product" v-model.trim="description"
+                :class="{ invalid: v$.description.$dirty && v$.description.$invalid }" class="h h-40"></textarea>
             <small class="helper-text text-red-600" v-for="error of v$.description.$errors" :key="error.$uid">
                 invalid description: {{ error.$message }}
             </small>

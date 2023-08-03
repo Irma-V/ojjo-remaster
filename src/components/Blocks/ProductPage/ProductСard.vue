@@ -38,7 +38,7 @@
                             <div class="buttons basis-[5%] w-4/5">
                                 <div class="buttons__wrapper flex flex-row justify-between">
                                     <div class="buttons-item buttons-item basis-1/3">
-                                        <ButtonDarkGray button-name="buy"></ButtonDarkGray>
+                                        <ButtonDarkGray button-name="buy" @click.prevent="buyNow"></ButtonDarkGray>
                                     </div>
                                     <div class="buttons-item buttons-item basis-1/2">
                                         <ButtonWhite button-name="add to basket" @click.prevent="addToBasket" type="submit">
@@ -86,14 +86,24 @@ export default {
     },
     created() {
         this.loadProduct()
+        console.log(this.baskets);
     },
+
+
     computed: {
         ...mapGetters({
             products: 'products/products',
-            baskets: 'basket/baskets',
+            baskets: 'baskets/baskets',
             info: 'info'
         }),
     },
+    async mounted(){
+        let baskets = await store.dispatch('baskets/fetchBaskets')
+        this.currentBasketUID = Object.keys(baskets).find(item=> item === this.userId)
+        // console.log('UID корзины: ', this.currentBasketUID)
+
+    },
+    
     watch: {
         productId: function () {
             this.loadProduct()
@@ -111,12 +121,16 @@ export default {
                 productId: this.productId,
                 userId: this.userId || null
             }
-            console.log(formData);
             try {
                 await store.dispatch('baskets/addToBasket', formData)
             } catch (error) {
                 console.log(error);
             }
+        },
+
+        buyNow(){
+            this.addToBasket()
+            this.$router.push({ name: 'favorites'})
         },
     }
 }

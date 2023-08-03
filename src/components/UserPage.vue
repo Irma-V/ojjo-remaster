@@ -3,12 +3,10 @@
     <section v-else>
         <div class="content">
             <div class="userPage">
-                <ion-icon name="person" size="large"></ion-icon>
-                This page can visible only users
+                <ProfileInfo></ProfileInfo>
 
-                <ProductsEditor v-if="info.userRole === 'Admin'" 
-                :fetchProducts="fetchProducts"
-                @updateProducts="updateProducts" />
+                <ProductsEditor v-if="info.userRole === 'Admin'" :fetchProducts="fetchProducts"
+                    @updateProducts="updateProducts" />
 
             </div>
         </div>
@@ -17,8 +15,8 @@
 
 <script>
 import Loader from "@/components/app/Loader.vue";
-
 import ProductsEditor from "./Blocks/UserPage/ProductsEditor.vue";
+import ProfileInfo from "./Blocks/UserPage/ProfileInfo.vue";
 
 
 import { mapGetters } from "vuex"
@@ -34,11 +32,12 @@ export default {
     components: {
         Loader,
         ProductsEditor,
+        ProfileInfo,
     },
     data() {
         return {
             loading: true,
-            user: null,
+            user: {},
             fetchProducts: null,
         }
     },
@@ -72,13 +71,3 @@ export default {
 
 }
 </script>
-<style scoped lang="scss">
-// form {
-//     .input-field {
-//         .invalid {
-//             outline: 0.1rem solid red;
-//         }
-//     }
-
-// }
-</style>

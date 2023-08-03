@@ -106,11 +106,14 @@ $light-Gray: #ccc;
   padding: 2% 0;
 }
 
-input {
+input, textarea {
   outline: 0.1rem solid $dark-Gray;
   border-radius: 0.625rem;
   color: $dark-Gray;
   padding: 0.625rem;
+  width: 100%;
+
+  resize: none;
   width: 100%;
 }
 
@@ -221,4 +224,9 @@ form {
       }
     }
   }
+}
+
+// for ion-icon
+ion-icon {
+    pointer-events: none;
 }

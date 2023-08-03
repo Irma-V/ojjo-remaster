@@ -39,8 +39,8 @@
         </div>
         <div class="input-field">
             <label for="description">Description</label>
-            <input id="description" type="text" placeholder="Information about new product" v-model.trim="description"
-                :class="{ invalid: v$.description.$dirty && v$.description.$invalid }" class="h h-40" />
+            <textarea id="description" type="text" placeholder="Information about new product" v-model.trim="description"
+                :class="{ invalid: v$.description.$dirty && v$.description.$invalid }" class="h h-40"> </textarea>
             <small class="helper-text text-red-600" v-for="error of v$.description.$errors" :key="error.$uid">
                 invalid description: {{ error.$message }}
             </small>
@@ -48,7 +48,7 @@
         <div class="input-field">
             <label for="price">Price</label>
             <input id="price" type="text" placeholder="price" v-model.trim="price"
-                :class="{ invalid: v$.price.$dirty && v$.price.$invalid }" />
+                :class="{ invalid: v$.price.$dirty && v$.price.$invalid }"/>
             <small class="helper-text text-red-600" v-for="error of v$.price.$errors" :key="error.$uid">
                 invalid price: {{ error.$message }}
             </small>
@@ -71,7 +71,6 @@
                             invalid Discount percentage: {{ error.$message }}
                         </small>
                     </div>
-
                     <div class="input-field">
                         <label for="rating">rating</label>
                         <input id="rating" type="text" placeholder="rating" v-model.trim="rating"
@@ -80,7 +79,6 @@
                             invalid rating: {{ error.$message }}
                         </small>
                     </div>
-
                     <div class="input-field">
                         <label for="stock">stock</label>
                         <input id="stock" type="text" placeholder="discountPercentage" v-model.trim="stock"
@@ -88,17 +86,16 @@
                         <small class="helper-text text-red-600" v-for="error of v$.stock.$errors" :key="error.$uid">
                             invalid stock: {{ error.$message }}
                         </small>
-                    </div>
-                    
+                    </div>                    
                 </div>
             </template>
         </VAccordion>
 
         <div class="options flex flex-row justify-between">
-            <div class="editProductBtn basis-[45%] h-auto">
+            <div class="editProductBtn basis-[45%]">
                 <ButtonDarkGray button-name="edit product" type="submit" @click.prevent="optionEdit()"></ButtonDarkGray>
             </div>
-            <div class="editProductBtn basis-[45%] h-auto">
+            <div class="editProductBtn basis-[45%]">
                 <ButtonDarkGray button-name="delete product" type="submit" @click.prevent="optionDel()"></ButtonDarkGray>
             </div>
         </div>
@@ -199,11 +196,12 @@ export default {
                 title: this.title,
                 description: this.description,
                 price: this.price,
-                // discountPercentage: this.discountPercentage,
-                // rating: this.rating,
-                // stock: this.stock,
+                discountPercentage: this.discountPercentage,
+                rating: this.rating,
+                stock: this.stock,
                 brand: this.brand,
                 category: this.category,
+                
                 // thumbnail: this.thumbnail,
                 // images: this.images,
             }

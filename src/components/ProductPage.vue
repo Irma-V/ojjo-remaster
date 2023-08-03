@@ -2,12 +2,7 @@
     <Loader v-if="loading || !productId"></Loader>
     <section v-else>
         <BreadCrumbs></BreadCrumbs>
-        <!-- <ProductCard :productId="productId" :product="product" :productCategory="productCategory"
-    :productImg_url="productImg_url" :productGalery_url="productGalery_url" :productName="productName"
-    :productDescription="productDescription" :productPrice="productPrice">
-  </ProductCard> -->
-        <ProductCard :productId="productId" :userId="userId">
-        </ProductCard>
+        <ProductCard :productId="productId" :userId="userId" />
         <AboutItBlock></AboutItBlock>
         <RelatedProducts :productId="productId"></RelatedProducts>
         <SubscriptionBlock></SubscriptionBlock>
@@ -55,8 +50,8 @@ export default {
         auth.onAuthStateChanged(async (user) => {
             await store.dispatch('auth/fetchUser', user);
             if (user !== null) {
-                this.userId=user.uid
-                console.log(this.userId);
+                this.userId = user.uid
+                // console.log(this.userId);
             }
         });
 
