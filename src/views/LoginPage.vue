@@ -85,7 +85,7 @@ export default {
 
             try {
                 await store.dispatch('auth/logIn', formData)
-                this.$router.push('/?message=loggedin_success')
+                this.$router.push('profile/?message=loggedin_success')
             } catch (error) {
                 // this.authErrorMsg = error.message /* для отображения ошибки в форме */
                 store.commit('setError', error.message)

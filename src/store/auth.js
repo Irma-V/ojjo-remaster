@@ -7,6 +7,7 @@ import {
   setPersistence,
   //   browserSessionPersistence,
   browserLocalPersistence,
+  signInAnonymously,
 } from "firebase/auth";
 import { ref, set } from "firebase/database";
 
@@ -22,6 +23,7 @@ export default {
     user(state) {
       return state.user;
     },
+
     userIsAuth(state) {
       // console.log(state.user.loggedIn, 2222222);
       return state.user.loggedIn;
@@ -53,7 +55,7 @@ export default {
           userName: name,
           email: email,
           userRole: "User",
-          basket: {},
+        //   basket: {},
         });
       } else {
         throw new Error("Unable to register user");
@@ -88,6 +90,29 @@ export default {
       await signOut(auth);
       context.commit("SET_USER", null);
       //   context.commit("clearInfo");
+    },
+
+    async createAnonimous(context) {
+      try {
+        const response = await signInAnonymously(auth);
+        console.log(response);
+
+        if (response) {
+            updateProfile(response.user, { displayName: 'Anonimous' });
+            
+            const uid = response.user.uid;
+            set(ref(database, `users/${uid}/info`), {
+                userName: 'Anonimous',
+                email: 'none',
+                userRole: "User",
+                //   basket: {},
+            });
+            context.commit("SET_USER", response.user);
+          }
+      } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      }
     },
 
     async fetchUser(context, user) {

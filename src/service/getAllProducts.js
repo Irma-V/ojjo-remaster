@@ -61,43 +61,41 @@ export const generateAllProducts = async function () {
 //   });
 // };
 
-export function getProducts (products,filters) {
-    
-      let newResult = products;
-      console.log(newResult);
-      //  newResult = result.filter((product) => {
-      //   //   todo добавить остальные фильтры
-      //   })
-      if (filters.category) {
-        newResult = newResult.filter((product) => {
-          return product.category === filters.category;
-        });
+export function getProducts(products, filters) {
+  let newResult = products;
+  //   console.log(newResult);
+  //  newResult = result.filter((product) => {
+  //   //   todo добавить остальные фильтры
+  //   })
+  if (filters.category) {
+    newResult = newResult.filter((product) => {
+      return product.category === filters.category;
+    });
+  }
+
+  if (filters.moreFilters !== []) {
+    newResult = newResult.filter((product) => {
+      let isValid = true;
+      for (let i in filters.moreFilters) {
+        //   console.log();
+        if (
+          product[filters.moreFilters[i].key] === filters.moreFilters[i].value
+        ) {
+          continue;
+        }
+        isValid = false;
+        break;
       }
-  
-      if (filters.moreFilters !== []) {
-        newResult = newResult.filter((product) => {
-          let isValid = true;
-          for (let i in filters.moreFilters) {
-            //   console.log();
-            if (
-              product[filters.moreFilters[i].key] === filters.moreFilters[i].value
-            ) {
-              continue;
-            }
-            isValid = false;
-            break;
-          }
-          return isValid;
-        });
-        //   console.log(newResult);
-      }
-      // console.log( 'полученные данные', newResult);
-      let count = newResult.length;
-      newResult = newResult.slice(filters.offset, filters.limit);
-      // console.log( 'полученный данные с учетом лимита', newResult);
-      return {
-        count: count,
-        result: newResult,
-      };
-    
+      return isValid;
+    });
+    //   console.log(newResult);
+  }
+  // console.log( 'полученные данные', newResult);
+  let count = newResult.length;
+  newResult = newResult.slice(filters.offset, filters.limit);
+  // console.log( 'полученный данные с учетом лимита', newResult);
+  return {
+    count: count,
+    result: newResult,
   };
+}

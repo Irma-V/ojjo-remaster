@@ -3,23 +3,29 @@
     <section v-else>
         <div class="content">
             <div class="userPage">
-                <ion-icon name="heart" size="large"></ion-icon>
-                This page can visible only users
+                <!-- <ion-icon name="heart" size="large"></ion-icon>
+                This page can visible only users -->
 
-                <div class="basket-products" v-for="product in userBasket.basketProducts" :key="product.foreignId">
-                    <div ref="basketProduct" class="basket-product flex flex-row justify-between items-center py-[2%]" :id="product.foreignId">
+                <ul :id="userBasket.basketID" v-if="userBasket.basketProducts" class="basket-products">
+                    <li :id="product.uniqueId" class="basket-product flex flex-row justify-between items-center py-[2%]"
+                        v-for="product in userBasket.basketProducts" :key="product.uniqueId">
                         <div class="basket-product__image basis-[20%]">
                             <img :src="product.thumbnail" alt="">
                         </div>
+
                         <div class="basket-product__description basis-[65%] p-[2%] capitalize font-bold">
                             <p>{{ product.title }} "{{ product.brand }}", {{ product.price }}$</p>
                         </div>
+
                         <div class="basket-product__options basis-[15%] flex flex-col justify-between">
                             <ButtonDarkGray button-name="buy"></ButtonDarkGray>
-                            <ButtonDarkGray button-name="del" @click="optionDel"></ButtonDarkGray>
+                            <ButtonDarkGray button-name="del" @click="optionDel(product.uniqueId)"></ButtonDarkGray>
                         </div>
-                    </div>
-                </div>
+
+                    </li>
+                </ul>
+
+                <p v-else> В корзине нет товаров</p>
             </div>
         </div>
     </section>
@@ -76,36 +82,47 @@ export default {
 
             if (currentBasketUID === this.user.uid) {
                 let userBasketProducts = []
-                let basketProducts = Object.values(baskets[currentBasketUID].products)
-                
+                // console.log(baskets[currentBasketUID].products);
 
-                for (let elem in products) {
-                    for (let i in basketProducts) {
-                        if (products[elem].id == basketProducts[i]) {
-                            // console.log(baskets[currentBasketUID].products, 66666);
+                if (baskets[currentBasketUID].products) {
+                    let basketProducts = Object.values(baskets[currentBasketUID].products)
 
-                            let obj = baskets[currentBasketUID].products
-                            let targetElem = products[elem]
-                            targetElem.foreignId = Object.keys(obj).find(key => obj[key] == targetElem.id)
+                    for (let elem in products) {
+                        for (let i in basketProducts) {
+                            if (products[elem].id == basketProducts[i]) {
+                                // console.log(baskets[currentBasketUID].products, 66666);
 
-                            userBasketProducts.push(targetElem)
+                                let obj = baskets[currentBasketUID].products
+                                let targetElem = products[elem]
+                                targetElem.uniqueId = Object.keys(obj).find(key => obj[key] == targetElem.id)
+
+                                userBasketProducts.push(targetElem)
+                            }
                         }
                     }
-                }
-                
-                this.userBasket = {
-                    basketID: baskets[currentBasketUID].basketId,
-                    basketProducts: userBasketProducts,
-                }
 
+                    this.userBasket = {
+                        basketID: baskets[currentBasketUID].basketId,
+                        basketProducts: userBasketProducts,
+                    }
+                } else {
+                    this.userBasket = {
+                        basketID: baskets[currentBasketUID].basketId,
+                        basketProducts: null,
+                    }
+
+                }
             }
-
+            console.log(this.userBasket);
             return this.userBasket
         },
 
-        async optionDel(){
+        async optionDel(uniqueId) {
             console.log('optionDel');
-            
+            const uid = this.user.uid
+            await store.dispatch('baskets/deleteFromBasket', { uid, uniqueId })
+            this.getUserBasket()
+            this.$message('Товар удалён из корзины')
         }
     }
 }

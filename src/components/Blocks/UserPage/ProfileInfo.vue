@@ -45,7 +45,7 @@ import Loader from "@/components/app/Loader.vue"
 
 import { mapGetters, mapActions } from "vuex"
 import { useVuelidate } from '@vuelidate/core'
-import { required, email, numeric } from '@vuelidate/validators'
+import { required, email } from '@vuelidate/validators'
 
 export default {
     name: "ProfileInfo",

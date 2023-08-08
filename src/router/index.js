@@ -54,13 +54,13 @@ const routes = [
     component: () => import("../components/ContactsPage.vue"),
   },
   {
-    path: "/userPage/:username?/favorites",
+    path: "/profile/:username?/favorites",
     name: "favorites",
     meta: { layout: "main", auth: true },
     component: () => import("../components/UsersFavoritesPage.vue"),
   },
   {
-    path: "/userPage/:username?",
+    path: "/profile/:username?",
     name: "user",
     meta: { layout: "main" },
     meta: { layout: "main", auth: true },

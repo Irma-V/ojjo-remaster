@@ -1,6 +1,7 @@
 <template>
     <div class="content pt-[10%] flex flex-col items-center">
-        <form class="register bg-white mx-[20%] p-[2%] rounded-xl flex flex-col justify-between sm:px-[15%] min-[769px]:px-[18%] xl:px-[20%]"
+        <form
+            class="register bg-white mx-[20%] p-[2%] rounded-xl flex flex-col justify-between sm:px-[15%] min-[769px]:px-[18%] xl:px-[20%]"
             @submit.prevent="submitHandler()" autocomplete="on">
             <div class="logo flex justify-center">
                 <router-link :to="{ name: 'home' }">
@@ -105,7 +106,8 @@ export default {
 
             try {
                 await store.dispatch('auth/register', formData)
-                this.$router.push('/?message=registered')
+                await store.dispatch('baskets/createBaskets')
+                this.$router.push('profile/?message=registered')
             } catch (error) {
                 // this.errorMessage = error.message /* для отображения ошибки в форме */
                 store.commit('setError', error.message)

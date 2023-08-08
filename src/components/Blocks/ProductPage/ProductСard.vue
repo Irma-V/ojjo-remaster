@@ -97,13 +97,13 @@ export default {
             info: 'info'
         }),
     },
-    async mounted(){
+    async mounted() {
         let baskets = await store.dispatch('baskets/fetchBaskets')
-        this.currentBasketUID = Object.keys(baskets).find(item=> item === this.userId)
+        this.currentBasketUID = Object.keys(baskets).find(item => item === this.userId)
         // console.log('UID корзины: ', this.currentBasketUID)
 
     },
-    
+
     watch: {
         productId: function () {
             this.loadProduct()
@@ -122,15 +122,30 @@ export default {
                 userId: this.userId || null
             }
             try {
-                await store.dispatch('baskets/addToBasket', formData)
+                if (this.userId) {
+                    await store.dispatch('baskets/addToBasket', formData)
+                    this.$message('Товар добавлен в корзину')
+                } else {
+                    console.log("Гостю можно предложить зарегаться или создать ячейку для анонимного пользователя");
+                    await store.dispatch('auth/createAnonimous')
+                    await store.dispatch('baskets/createBaskets')
+                    formData = {
+                        productId: this.productId,
+                        userId: this.userId
+                    }
+                    await store.dispatch('baskets/addToBasket', formData)
+                    this.$message('Товар добавлен в корзину')
+                }
             } catch (error) {
                 console.log(error);
             }
         },
 
-        buyNow(){
+        buyNow() {
             this.addToBasket()
-            this.$router.push({ name: 'favorites'})
+            if (this.userId) {
+                this.$router.push({ name: 'favorites' })
+            }
         },
     }
 }
