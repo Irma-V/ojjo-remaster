@@ -11,7 +11,8 @@
                 </agile>
 
             </div>
-            <div class="catalog-item__description flex flex-col justify-between items-center w-full" @click.stop="this.$router.push(`/product/id=${productId}`)">
+            <!-- <div class="catalog-item__description flex flex-col justify-between items-center w-full" @click.stop="this.$router.push(`/product/id=${productId}`)"> -->
+            <div class="catalog-item__description flex flex-col justify-between items-center w-full" @click.stop="this.$router.push({ name: 'ProductPage', params: { productId: productId, productCategory: productCategory}})">
                 <div class="catalog-item-category mb-[5%] text-center">{{ product }}</div>
                 <div class="catalog-item-name font-bold mb-[5%]">{{ productName }}</div>
                 <div class="catalog-item-price w-1/2 mb-[5%]">
@@ -90,6 +91,7 @@ export default {
     mounted(){
         // console.log(this.sliderShowTypes);
         // console.log(Object.values(this.galery));
+        // console.log(this.productCategory);
     },
 }
 </script>

@@ -2,6 +2,11 @@
     <Loader v-if="loading || !items"></Loader>
     <section v-else>
         <div id="fltr" v-if="!category">
+            <BreadCrumbs>
+                <BreadCrumb :to="{ name: 'home' }">home</BreadCrumb>
+                /
+                <BreadCrumb :to="{ name: '' }">catalog</BreadCrumb>
+            </BreadCrumbs>
             <article>
                 <FilterBlock @select-change="filterChangeHandler" :products="allProducts" :filterTitles="filterTitles" />
                 <div class="info w-full flex flex-row flex-wrap justify-around items-center">
@@ -13,6 +18,14 @@
             </article>
         </div>
         <div id="no-products" v-else>
+            <BreadCrumbs>
+                <BreadCrumb :to="{ name: 'home' }">home</BreadCrumb>
+                /
+                <BreadCrumb :to="{ name: 'CatalogPage' }">catalog</BreadCrumb>
+                /
+                <BreadCrumb :to="{ name: '' }">category
+                </BreadCrumb>
+            </BreadCrumbs>
             <article>
                 <div class="content">
                     <TitleBlock v-if="items.length" :title="category" description="Category:"></TitleBlock>
@@ -45,6 +58,10 @@ import SubscriptionBlock from "./Blocks/generalBlocks/SubscriptionBlock.vue";
 import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
 import Loader from "@/components/app/Loader.vue";
 
+import BreadCrumbs from './Blocks/generalBlocks/BreadCrumbs.vue';
+import BreadCrumb from './Blocks/generalBlocks/BreadCrumb.vue';
+
+
 import store from "@/store";
 import { mapGetters } from "vuex"
 
@@ -61,6 +78,8 @@ export default {
         SubscriptionBlock,
         ButtonDarkGray,
         Loader,
+        BreadCrumbs,
+        BreadCrumb,
     },
     props: {
         productCategory: {

@@ -1,27 +1,24 @@
 <template>
     <article>
         <div class="content">
-            <div @click="this.toCamelCase">BreadCrumbs</div>
-            <!-- <BBreadcrumb>
-                <BBreadcrumbItem>home</BBreadcrumbItem>
-                <BBreadcrumbItem>home</BBreadcrumbItem>
-                <BBreadcrumbItem>home</BBreadcrumbItem>
-            </BBreadcrumb> -->
+            <!-- <div>BreadCrumbs</div> -->
+            <ul class="flex flex-row justify-start items-center mx-[20%]">
+                <slot/>
+            </ul>
+            
         </div>
     </article>
 </template>
 <script>
 
-
-// import { BBreadcrumb, BBreadcrumbItem } from 'bootstrap-vue'
+// import VBreadcrumbs from "vuetify/lib/components/VBreadcrumbs";
 export default {
     name: "BreadCrumbs",
-    components: {
-        //    BBreadcrumb,
-        //    BBreadcrumbItem,
-    },
     props: {
-
+        items: {
+            type: ArrayBuffer,
+            required: true
+        }
     },
     data() {
         return {
@@ -29,9 +26,16 @@ export default {
         }
     },
 
+    mounted() {
+    },
+
+    computed: {
+        breads() {}
+
+    },
+
     methods: {
-        
+
     }
 }
 </script>
-<style scoped lang="scss"></style>

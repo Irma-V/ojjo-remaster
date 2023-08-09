@@ -6,7 +6,7 @@
                     <ProductCardItem productCardItemStyle=" basis-full min-[375px]:basis-1/2 sm:basis-1/3"
                         v-for="product in products" :key="product" :product-id="product.id" :product="product.title"
                         :product-name="product.brand" :product-price="product.price + ' $'" slider-show-type='slider'
-                        :galery="product.images">
+                        :galery="product.images" :productCategory="product.category">
                     </ProductCardItem>
                 </div>
             </div>

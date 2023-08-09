@@ -7,7 +7,7 @@
                     :dots="false" :nav-buttons="false">
                     <ProductCardItem v-for="product in relatedProducts" :key="product.id" :product-id="product.id"
                         :product="product.title" :product-name="product.brand" :product-price="product.price"
-                        slider-show-type='single' :productImg_url="product.images[0]"></ProductCardItem>
+                        slider-show-type='single' :productImg_url="product.images[0]" :productCategory="product.category"></ProductCardItem>
                 </agile>
             </div>
         </div>

@@ -13,9 +13,21 @@ import Loader from "@/components/app/Loader";
 // import axios from "axios";
 // import VueAxios from "vue-axios";
 
+/* firebase */
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+
+/* bootstrap */
+// import Vue from 'vue'
+// import { BootstrapVue } from 'bootstrap-vue'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+/* Vuetify */
+// import 'vuetify/styles'
+// import { createVuetify } from 'vuetify'
+// import * as components from 'vuetify/components'
+// import * as directives from 'vuetify/directives'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDCX-XPoUNpW5prGsuR0es9N0gwZZS91x0",
@@ -30,11 +42,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+// const vuetify = createVuetify({
+//     components,
+//     directives,
+//   })
+
 createApp(App)
   .use(router)
   .use(VueAgile)
   .use(store)
   .use(messagePlugin)
+//   .use(BootstrapVue)
+//   .use(vuetify)
   .component("Loader", Loader)
   //   .use(VueAxios, axios)
   .mount("#app");

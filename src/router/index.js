@@ -3,18 +3,17 @@ import { auth } from "@/main";
 import { onAuthStateChanged } from "firebase/auth";
 
 const routes = [
-
   //empty-layout
   {
     path: "/login",
     name: "login",
-    meta: { layout: "empty"},
+    meta: { layout: "empty" },
     component: () => import("../views/LoginPage"),
   },
   {
     path: "/register",
     name: "register",
-    meta: { layout: "empty"},
+    meta: { layout: "empty" },
     component: () => import("../views/RegisterPage"),
   },
   {
@@ -28,21 +27,27 @@ const routes = [
   {
     path: "/",
     name: "home",
-    meta: { layout: "main"},
+    meta: { layout: "main" },
     component: () => import("../components/IndexPage.vue"),
     // alias: "/",
   },
   {
     path: "/catalog/category/:productCategory?",
     name: "CatalogPage",
-    meta: { layout: "main"},
+    meta: {
+      layout: "main",
+      title: "Каталог",
+    },
     component: () => import("../components/CatalogPage.vue"),
     props: true,
   },
   {
-    path: "/product/id=:productId",
+    path: "/catalog/category/:productCategory?/product/:productId",
     name: "ProductPage",
-    meta: { layout: "main"},
+    meta: {
+      layout: "main",
+      title: "Товар",
+    },
     component: () => import("../components/ProductPage.vue"),
 
     props: true,
@@ -50,7 +55,7 @@ const routes = [
   {
     path: "/contacts",
     name: "contacts",
-    meta: { layout: "main"},
+    meta: { layout: "main" },
     component: () => import("../components/ContactsPage.vue"),
   },
   {
@@ -85,31 +90,30 @@ const router = createRouter({
 });
 
 function getCurrentUser() {
-    return new Promise((resolve, reject) => {
-      const unsubscribe = onAuthStateChanged(
-        auth,
-        (user) => {
-          unsubscribe()
-          resolve(user)
-        },
-        reject
-      )
-    })
-  }
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (user) => {
+        unsubscribe();
+        resolve(user);
+      },
+      reject
+    );
+  });
+}
 
 router.beforeEach(async (to) => {
-    if (await getCurrentUser() && to.name === 'login') {
-        console.log('Всё в порядке, вы вошли в систему ранее');
-        return '/'
-    }
+  if ((await getCurrentUser()) && to.name === "login") {
+    console.log("Всё в порядке, вы вошли в систему ранее");
+    return "/";
+  }
 
-    const requiresAuth = to.matched.some((record) => record.meta.auth)
-    if (requiresAuth && !(await getCurrentUser())) {
-        console.log('При необходимости можете войти в систему');
-        return '/login?message=login'
-        // return '/'
-        
-    }
+  const requiresAuth = to.matched.some((record) => record.meta.auth);
+  if (requiresAuth && !(await getCurrentUser())) {
+    console.log("При необходимости можете войти в систему");
+    return "/login?message=login";
+    // return '/'
+  }
 });
 
 export default router;

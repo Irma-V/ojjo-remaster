@@ -77,7 +77,7 @@ export default {
         },
         userId: {
             type: String,
-        }
+        },
     },
     data() {
         return {
