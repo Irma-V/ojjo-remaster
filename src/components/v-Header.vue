@@ -1,8 +1,7 @@
 <template>
     <header class="w-full fixed bg-[#333333] min-[425px]:min-h-min">
         <div class="header-content m-auto max-w-[120rem] text-white text-sm">
-            <div
-                class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
+            <div class="header-content__wrapper m-auto w-[95%] min-[769px]:w-[95%] lg:w-[90%] xl:w-4/5 flex flex-col justify-between py-[2%] min-[769px]:py-[1%]">
                 <NavBar :icon="iconName" @clickOnBurger="this.$emit('runMenuSwitcher')"
                     @openedPage="this.$emit('runMenuSwitcher')" @logout="logout" :userName="userName" />
 
@@ -15,10 +14,12 @@
 
 <script>
 // import { api } from '@/api';
-import { auth } from '@/main'
-import store from '@/store'
 import NavBar from "@/components/app/NavBar.vue";
 import SideBar from "@/components/app/SideBar.vue";
+
+import { auth } from '@/main'
+// import { mapGetters, mapActions } from "vuex"
+import store from '@/store'
 
 export default {
     name: "VHeader",
@@ -35,6 +36,17 @@ export default {
             userName: ''
         }
     },
+
+    // computed: {
+    //     ...mapGetters({
+    //         info: 'info'
+    //     })
+    // },
+    // created() {
+    //     console.log(this.info.userName);  
+
+    // },
+
     mounted() {
         auth.onAuthStateChanged(async (user) => {
             if (user) {
@@ -148,7 +160,7 @@ header {
                                 </router-link>
                             </li>
                             <li v-if="isAuth">
-                                <router-link :to="{ name: 'favorites' }">
+                                <router-link :to="{ name: 'basket' }">
                                     <ion-icon name="heart"></ion-icon>
                                 </router-link>
                             </li>
@@ -192,7 +204,7 @@ header {
                                     </router-link>
                                 </li>
                                 <li class="basis-1/6">
-                                    <router-link :to="{ name: 'favorites' }">
+                                    <router-link :to="{ name: 'basket' }">
                                         <ion-icon name="heart" size="large"></ion-icon>
                                     </router-link>
 

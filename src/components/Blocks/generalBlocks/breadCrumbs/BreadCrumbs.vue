@@ -2,7 +2,7 @@
     <article>
         <div class="content">
             <!-- <div>BreadCrumbs</div> -->
-            <ul class="flex flex-row justify-start items-center mx-[20%]">
+            <ul class="flex flex-row justify-start items-center mx-[10%] flex-wrap md:flex-nowrap">
                 <slot/>
             </ul>
             

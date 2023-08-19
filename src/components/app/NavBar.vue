@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar flex flex-row justify-between items-center">
-        <div class="header-list hidden min-[769px]:block basis-[25%]">
-            <ul class="flex flex-row justify-between capitalize" @click.stop="this.$emit('openedPage')">
+        <div class="header-list-left hidden min-[769px]:block basis-1/4">
+            <ul class="flex flex-row justify-between items-center capitalize" @click.stop="this.$emit('openedPage')">
                 <li>
                     <router-link :to="{ name: 'home' }">
                         to counterparties
@@ -24,7 +24,7 @@
                 <img src="~@/assets/img/logo/OJJO.png" alt="OJJO.png" />
             </router-link>
         </div>
-        <div class="header-list hidden min-[769px]:block basis-[25%]" @click.stop="this.$emit('openedPage')">
+        <div class="header-list-right hidden min-[769px]:block basis-1/4" @click.stop="this.$emit('openedPage')">
             <ul class="flex flex-row justify-between">
                 <li>
                     <div class="flex flex-row justify-between items-center">
@@ -38,7 +38,7 @@
                         <span>Login / Registration</span>
                     </router-link>
                 </li>
-                <li v-if="userIsAuth" @click.prevent="$emit('logout')">
+                <li v-if="userIsAuth && userName !== 'Anonimous'" @click.prevent="$emit('logout')">
                     <span class="cursor-pointer">Logout</span>
                 </li>
                 <li v-if="userIsAuth">
@@ -47,8 +47,9 @@
                     </router-link>
                 </li>
                 <li v-if="userIsAuth">
-                    <router-link :to="{ name: 'favorites' }">
-                        <ion-icon name="heart"></ion-icon>
+                    <router-link :to="{ name: 'basket' }">
+                        <!-- <ion-icon name="heart"></ion-icon> -->
+                        <ion-icon name="cart-sharp"></ion-icon>
                     </router-link>
                 </li>
             </ul>
@@ -69,7 +70,7 @@ export default {
         icon: {
             type: String,
         },
-        userName:{
+        userName: {
             type: String,
         },
     },
@@ -84,3 +85,15 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss">
+.header-list-left{
+
+    ul {
+        li {
+            text-align: center;
+            padding: 0 3%;
+        }
+    }
+}
+</style>

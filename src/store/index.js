@@ -5,7 +5,6 @@ import products from "./products";
 import baskets from "./baskets";
 
 const store =  createStore({
-//   namespaced: true,
   state() {
     return {
       products: [],

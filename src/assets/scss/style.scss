@@ -32,8 +32,8 @@ hr {
 }
 
 a {
-    height: 100%;
-    display: block;
+  height: 100%;
+  display: block;
 }
 
 // buttons
@@ -111,7 +111,8 @@ $light-Gray: #ccc;
   padding: 2% 0;
 }
 
-input, textarea {
+input,
+textarea {
   outline: 0.1rem solid $dark-Gray;
   border-radius: 0.625rem;
   color: $dark-Gray;
@@ -194,9 +195,9 @@ form {
       -ms-user-select: none;
       user-select: none;
 
-    //   -webkit-appearance: none;
+      //   -webkit-appearance: none;
       -moz-appearance: radio-container;
-    //   appearance: none;
+      //   appearance: none;
     }
   }
 }
@@ -231,7 +232,31 @@ form {
   }
 }
 
+.catalog-block {
+  .agile {
+    .agile__actions {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 1;
+
+      .agile__nav-button {
+        background-color: rgba(0, 0, 0, 0.148);
+        // flex-basis: 45%;
+        // border-radius: 50%;
+        // flex-basis: 5%;
+      }
+    }
+
+    &:hover .agile__actions {
+      opacity: 100%;
+    }
+  }
+}
+
 // for ion-icon
 ion-icon {
-    pointer-events: none;
+  pointer-events: none;
 }

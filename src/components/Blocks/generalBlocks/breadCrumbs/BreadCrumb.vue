@@ -1,5 +1,5 @@
 <template>
-    <li class="capitalize">
+    <li class="capitalize text-center">
         <router-link v-bind="$attrs">
             <slot />
         </router-link>
@@ -21,17 +21,18 @@ export default {
 
 <style scoped lang="scss">
 li:first-child{
-    margin: 0 3rem 0 0;
+    padding: 0 3% 0 0;
 }
 
 li {
     text-decoration: underline;
-    margin: 0 3rem;
+    padding: 0 3%;
 }
 
 li:last-child {
+    color: rgb(89, 163, 139);;
     text-decoration: none;
-    margin: 0 0 0 3rem;
+    padding: 0 0 0 3%;
     a{
         cursor: auto;
     }

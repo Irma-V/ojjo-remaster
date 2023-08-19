@@ -23,7 +23,7 @@
                             <span>Login / Registration</span>
                         </router-link>
                     </li>
-                    <li v-if="userIsAuth" @click.prevent="$emit('logout')">
+                    <li v-if="userIsAuth && userName !== 'Anonimous'" @click.prevent="$emit('logout')">
                         <span class="cursor-pointer">Logout</span>
                     </li>
                 </ul>
@@ -37,8 +37,9 @@
                         </router-link>
                     </li>
                     <li class="basis-1/6">
-                        <router-link :to="{ name: 'favorites' }">
-                            <ion-icon name="heart" size="large"></ion-icon>
+                        <router-link :to="{ name: 'basket' }">
+                            <!-- <ion-icon name="heart" size="large"></ion-icon> -->
+                            <ion-icon name="cart-sharp" size="large"></ion-icon>
                         </router-link>
                     </li>
                 </ul>

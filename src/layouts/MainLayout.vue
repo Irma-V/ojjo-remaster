@@ -48,19 +48,24 @@ export default {
         }
 
     },
-
+    
     async mounted() {        
+        const queryProducts = await store.dispatch('products/fetchProducts')
+        const firebaseProducts = Object.values(queryProducts)
+
         if (messages[this.$route.query.message]) {
             this.$message(messages[this.$route.query.message])
         }        
         if (this.infoIsEmpty) {
             await store.dispatch('fetchInfo')
         }
+        
         if (this.basketsIsEmpty) {
             // await store.dispatch('baskets/createBaskets')
             await store.dispatch('baskets/fetchBaskets')
         }
-        if (this.productsIsEmpty) {
+
+        if (firebaseProducts.length <= 0) {
             const allProducts = await generateAllProducts()
             // console.log(allProducts);
             await store.dispatch('products/uploadeProducts', allProducts)

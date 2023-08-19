@@ -2,12 +2,12 @@
     <Loader v-if="loading || !user || !fetchProducts"></Loader>
     <section v-else>
         <div class="content">
-            <div class="userPage">
+            <div class="user-page">
                 <ProfileInfo></ProfileInfo>
-
-                <ProductsEditor v-if="info.userRole === 'Admin'" :fetchProducts="fetchProducts"
+                <ProductsEditor v-if="info.userRole==='Admin'" :fetchProducts="fetchProducts"
                     @updateProducts="updateProducts" />
 
+                <AnonimousForm v-if="info.userRole === 'Anonimous'" />
             </div>
         </div>
     </section>
@@ -17,7 +17,7 @@
 import Loader from "@/components/app/Loader.vue";
 import ProductsEditor from "./Blocks/UserPage/ProductsEditor.vue";
 import ProfileInfo from "./Blocks/UserPage/ProfileInfo.vue";
-
+import AnonimousForm from "./Blocks/UserPage/AnonimousForm.vue";
 
 import { mapGetters } from "vuex"
 import store from "@/store";
@@ -33,6 +33,7 @@ export default {
         Loader,
         ProductsEditor,
         ProfileInfo,
+        AnonimousForm,
     },
     data() {
         return {
@@ -50,10 +51,11 @@ export default {
     async mounted() {
         auth.onAuthStateChanged(async (user) => {
             await store.dispatch('auth/fetchUser', user);
-            console.log('пользователь: ', user || null);
+            // console.log('пользователь: ', user || null);
             if (user !== null) {
                 this.user = user
                 this.loading = false
+                console.log(this.info);
             }
         });
 

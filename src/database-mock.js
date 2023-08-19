@@ -857,7 +857,7 @@ export const products1 = [
     productId: 122,
     product: "cufflinks",
     productCategory: "cufflinks",
-    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks01/cufflinks01_01.jpg"),
+    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks02/cufflinks02_01.jpg"),
     productGalery_url: [
       require("./assets/img/catalog/cufflinks/cufflinks02/cufflinks02_01.jpg"),
       require("./assets/img/catalog/cufflinks/cufflinks02/cufflinks02_02.jpg"),
@@ -872,7 +872,7 @@ export const products1 = [
     productId: 123,
     product: "cufflinks",
     productCategory: "cufflinks",
-    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks02/cufflinks02_01.jpg"),
+    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks03/cufflinks03_01.jpg"),
     productGalery_url: [
       require("./assets/img/catalog/cufflinks/cufflinks03/cufflinks03_01.jpg"),
       require("./assets/img/catalog/cufflinks/cufflinks03/cufflinks03_02.jpg"),
@@ -887,7 +887,7 @@ export const products1 = [
     productId: 124,
     product: "cufflinks",
     productCategory: "cufflinks",
-    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks01/cufflinks01_01.jpg"),
+    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks04/cufflinks04_01.jpg"),
     productGalery_url: [
       require("./assets/img/catalog/cufflinks/cufflinks04/cufflinks04_01.jpg"),
       require("./assets/img/catalog/cufflinks/cufflinks04/cufflinks04_02.jpg"),
@@ -902,7 +902,7 @@ export const products1 = [
     productId: 125,
     product: "cufflinks",
     productCategory: "cufflinks",
-    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks02/cufflinks02_01.jpg"),
+    productImg_url: require("./assets/img/catalog/cufflinks/cufflinks05/cufflinks05_01.jpg"),
     productGalery_url: [
       require("./assets/img/catalog/cufflinks/cufflinks05/cufflinks05_01.jpg"),
       require("./assets/img/catalog/cufflinks/cufflinks05/cufflinks05_02.jpg"),

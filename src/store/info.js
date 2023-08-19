@@ -1,6 +1,6 @@
 import { auth, database } from "@/main";
 import { onValue, ref, update } from "firebase/database";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, updateProfile } from "firebase/auth";
 
 export default {
   state: {
@@ -24,13 +24,13 @@ export default {
     },
   },
   actions: {
+    // Для метода updateInfo передаем объект с ключами userName, email, и userRole
     async updateInfo(context, toUpdate) {
       try {
         const uid = await context.dispatch("auth/getUid");
         const info = ref(database, `users/${uid}/info`);
+        // console.log(toUpdate);
         const updateData = { ...this.getters.info, ...toUpdate };
-        // console.log(updateData);
-
         update(info, updateData);
         context.commit("setInfo", updateData);
       } catch (error) {

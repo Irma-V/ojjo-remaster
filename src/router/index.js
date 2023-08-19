@@ -59,10 +59,10 @@ const routes = [
     component: () => import("../components/ContactsPage.vue"),
   },
   {
-    path: "/profile/:username?/favorites",
-    name: "favorites",
+    path: "/profile/:username?/basket",
+    name: "basket",
     meta: { layout: "main", auth: true },
-    component: () => import("../components/UsersFavoritesPage.vue"),
+    component: () => import("../components/BasketPage.vue"),
   },
   {
     path: "/profile/:username?",

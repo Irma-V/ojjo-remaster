@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import BreadCrumbs from './Blocks/generalBlocks/BreadCrumbs.vue';
+import BreadCrumbs from './Blocks/generalBlocks/breadCrumbs/BreadCrumbs.vue';
 
 
 

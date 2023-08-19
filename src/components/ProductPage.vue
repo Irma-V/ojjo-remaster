@@ -2,15 +2,15 @@
     <Loader v-if="loading || !productId"></Loader>
     <section v-else>
         <BreadCrumbs>
-            <BreadCrumb :to="{name:'home'}">home</BreadCrumb>
+            <BreadCrumb :to="{ name: 'home' }">home</BreadCrumb>
             /
-            <BreadCrumb :to="{name:'CatalogPage'}">catalog</BreadCrumb>
+            <BreadCrumb :to="{ name: 'CatalogPage' }">catalog</BreadCrumb>
             /
-            <BreadCrumb :to="{name:'CatalogPage', params:{productCategory: productCategory}}">category</BreadCrumb>
+            <BreadCrumb :to="{ name: 'CatalogPage', params: { productCategory: productCategory } }">category</BreadCrumb>
             /
-            <BreadCrumb :to="{name:''}">{{ product.title }} {{ product.brand }}</BreadCrumb>
+            <BreadCrumb :to="{ name: '' }">{{ product.title }} {{ product.brand }}</BreadCrumb>
         </BreadCrumbs>
-        <ProductCard :productId="productId" :userId="userId" />
+        <ProductCard :product="product" :productId="productId" :userId="userId" />
         <AboutItBlock></AboutItBlock>
         <RelatedProducts :productId="productId"></RelatedProducts>
         <SubscriptionBlock></SubscriptionBlock>
@@ -24,8 +24,8 @@ import RelatedProducts from './Blocks/ProductPage/RelatedProducts.vue';
 import ProductCard from './Blocks/ProductPage/ProductСard.vue'
 import Loader from "@/components/app/Loader.vue";
 
-import BreadCrumbs from './Blocks/generalBlocks/BreadCrumbs.vue';
-import BreadCrumb from './Blocks/generalBlocks/BreadCrumb.vue';
+import BreadCrumbs from './Blocks/generalBlocks/breadCrumbs/BreadCrumbs.vue';
+import BreadCrumb from './Blocks/generalBlocks/breadCrumbs/BreadCrumb.vue';
 
 
 import { auth } from "@/main";
@@ -60,9 +60,12 @@ export default {
     data() {
         return {
             userId: '',
-
             product: {}
         }
+    },
+
+    created() {
+        this.loadProduct()
     },
 
     async mounted() {
@@ -71,14 +74,25 @@ export default {
             if (user !== null) {
                 this.userId = user.uid
                 // console.log(this.userId);
-            let products = await store.dispatch('products/fetchProducts')
-            this.product = products.find(product => product.id == this.productId)
-                console.log(this.product);
             }
         });
 
         console.log("id текущего товара: ", this.productId, this.productCategory);
     },
+
+    watch: {
+        productId: function () {
+            this.loadProduct()
+        }
+    },
+
+    methods: {
+        async loadProduct() {
+            let products = await store.dispatch('products/fetchProducts')
+            this.product = products.find(product => product.id == this.productId)
+            // console.log(this.product);
+        },
+    }
 };
 
 </script>

@@ -34,11 +34,11 @@ export default {
               update(products, updateData);
               context.commit("setProducts", updateData);
             } else {
-              console.log("пользователь - не админ");
+              console.log("Пользователь - не админ");
               return;
             }
           } else {
-            console.log("пользователь не залогинен");
+            console.log("Пользователь не залогинен");
             return;
           }
         });

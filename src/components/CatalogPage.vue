@@ -10,7 +10,10 @@
             <article>
                 <FilterBlock @select-change="filterChangeHandler" :products="allProducts" :filterTitles="filterTitles" />
                 <div class="info w-full flex flex-row flex-wrap justify-around items-center">
-                    <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p>
+
+                    <!-- <p v-if="filters.length"> найдено товаров: {{ filteredCount }}</p> -->
+                    <p v-if="filters.length"> products found: {{ filteredCount }}</p>
+
                     <div class="resetBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
                         <ButtonDarkGray button-name="Reset Filters" @click.prevent="reset" />
                     </div>
@@ -29,7 +32,10 @@
             <article>
                 <div class="content">
                     <TitleBlock v-if="items.length" :title="category" description="Category:"></TitleBlock>
-                    <p v-else class="text-center pb-[2%]">Товары по данной категории отстутствуют.</p>
+
+                    <!-- <p v-else class="text-center pb-[2%]">Товары по данной категории отстутствуют.</p> -->
+                    <p v-else class="text-center pb-[2%]">There are no products in this category.</p>
+
                     <div class="info w-full flex flex-row flex-wrap justify-around items-center">
                         <div class="homeBtn basis-full min-[270px]:basis-1/2 sm:basis-1/3 min-[769px]:basis-1/5">
                             <!-- вернуться на шаг назад -->
@@ -58,8 +64,8 @@ import SubscriptionBlock from "./Blocks/generalBlocks/SubscriptionBlock.vue";
 import ButtonDarkGray from "./Blocks/generalBlocks/ButtonsStyle/ButtonDarkGray.vue";
 import Loader from "@/components/app/Loader.vue";
 
-import BreadCrumbs from './Blocks/generalBlocks/BreadCrumbs.vue';
-import BreadCrumb from './Blocks/generalBlocks/BreadCrumb.vue';
+import BreadCrumbs from './Blocks/generalBlocks/breadCrumbs/BreadCrumbs.vue';
+import BreadCrumb from './Blocks/generalBlocks/breadCrumbs/BreadCrumb.vue';
 
 
 import store from "@/store";

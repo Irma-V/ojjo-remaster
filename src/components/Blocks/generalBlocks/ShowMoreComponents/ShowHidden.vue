@@ -78,7 +78,6 @@ export default {
     //         background-color: white;
     //     }
     // }
-
     .show-more {}
 }
 </style>

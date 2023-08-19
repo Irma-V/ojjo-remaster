@@ -4,7 +4,7 @@
             <TitleBlock title="Products You May Like" description="We've got something else for you"></TitleBlock>
             <div class="catalog-block pb-[5%] font-sans font-thin tracking-tight text-base">
                 <agile :options="productsOptions" :autoplay="true" :autoplaySpeed="5000" :isAutoplayPaused="true"
-                    :dots="false" :nav-buttons="false">
+                    :dots="false" :nav-buttons="true">
                     <ProductCardItem v-for="product in relatedProducts" :key="product.id" :product-id="product.id"
                         :product="product.title" :product-name="product.brand" :product-price="product.price"
                         slider-show-type='single' :productImg_url="product.images[0]" :productCategory="product.category"></ProductCardItem>

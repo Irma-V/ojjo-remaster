@@ -210,7 +210,7 @@ export default {
             try {
                 await store.dispatch('products/updateProduct', { dataset, idx })
                 this.reset()
-                this.$message(`Карточка обновлена`)
+                this.$message(`Product Card updated. Карточка обновлена.`)
                 this.$emit('updateProducts')
             } catch (error) {
                 console.log(error);
@@ -231,14 +231,14 @@ export default {
                 try {
                     await store.dispatch('products/deleteProduct', idx)
                     this.reset()
-                    this.$message(`Карточка удалена`)
+                    this.$message(`Product Card removed. Карточка удалена.`)
                     this.$emit('updateProducts')
                 } catch (error) {
                     console.log(error);
                 }
             } else {
                 console.log("Данную карточку нельзя удалить");
-                this.$message(`Данную карточку нельзя удалить`)
+                this.$message(`[Access Denied]: This card cannot be deleted! [Отказано в доступе]: Данную карточку нельзя удалить!`)
             }
         },
 

@@ -215,7 +215,7 @@ export default {
                 this.LastIdxElem = this.LastIdxElem + 1
                 this.lastProductsElem = this.lastProductsElem + 1
                 console.log('Индекс и ID последнего элемента: ', this.LastIdxElem, ', ', this.lastProductsElem);
-                this.$message(`Карточка создана`)
+                this.$message(`Product Card created. Карточка создана.`)
                 this.$emit('updateProducts')
             } catch (error) {
                 console.log(error);

@@ -14,7 +14,7 @@
             <div v-if="showMoreButton"
                 class="load-more flex justify-center disabled:opacity-10">
                 <div class="load-more__wrapper w-1/2 min-[769px]:w-1/4">
-                    <ButtonDarkGray button-name="Load More" @click="$emit('loadMore')"></ButtonDarkGray>
+                    <ButtonDarkGray button-name="Load More" @click="this.$emit('loadMore')"></ButtonDarkGray>
                 </div>
             </div>
 
@@ -49,20 +49,8 @@ export default {
         lim: { type: Number },
         filteredCount: { type: Number },
     },
-    emits: {
-        loadMore: {
-            required: true,
-        },
-    },
     data() {
-        return {
-            // productsMax: this.products.length
-            /* Uncomment if you need to get Products data from @/database-mock */
-            // items: [],
-            // limit: 6,
-            // offset: 0,
-            // step: 6
-        }
+        return { }
     },
     computed: {
         productsMax() {
@@ -78,34 +66,6 @@ export default {
         }
     }
 
-    /* Uncomment if you need to get Products data from @/database-mock */
-    // created() {
-    //     this.items = this.filteredProducts().slice(this.offset, this.limit)
-    // },
-    // mounted() {
-    // if (this.items.length < 6) {
-    //     document.querySelector('.load-more').style.display = 'none'
-    // }
-
-    // },
-    // methods: {
-    //     loadMore() {
-    //         let LoadMoreBlock = document.querySelector('.load-more')
-    //         this.offset += this.step
-    //         this.limit += this.step
-    //         let newItems = this.filteredProducts().slice(this.offset, this.limit)
-    //         this.items.push(...newItems)
-    //         if (this.items.length === this.filteredProducts().length || this.items.length <= 6) {
-    //             LoadMoreBlock.style.display = 'none'
-    //         }
-    //     },
-    //     filteredProducts() {
-    //         if (this.productCategory) {
-    //             return products.filter(product => product.productCategory === this.productCategory)
-    //         }
-    //         return products
-    //     },
-    // },
+    
 }
 </script>
-<style scoped lang="scss"></style>

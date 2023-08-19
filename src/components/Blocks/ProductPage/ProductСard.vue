@@ -78,14 +78,19 @@ export default {
         userId: {
             type: String,
         },
+        product: {
+            type: Object,
+            required: true
+        },
+
     },
     data() {
         return {
-            product: {},
+            // product: {},
         }
     },
     created() {
-        this.loadProduct()
+        // this.loadProduct()
         console.log(this.baskets);
     },
 
@@ -104,16 +109,16 @@ export default {
 
     },
 
-    watch: {
-        productId: function () {
-            this.loadProduct()
-        }
-    },
+    // watch: {
+    //     productId: function () {
+    //         this.loadProduct()
+    //     }
+    // },
     methods: {
-        async loadProduct() {
-            let products = await store.dispatch('products/fetchProducts')
-            this.product = products.find(product => product.id == this.productId)
-        },
+        // async loadProduct() {
+        //     let products = await store.dispatch('products/fetchProducts')
+        //     this.product = products.find(product => product.id == this.productId)
+        // },
 
         async addToBasket() {
             console.log('addToBasket');
@@ -124,7 +129,7 @@ export default {
             try {
                 if (this.userId) {
                     await store.dispatch('baskets/addToBasket', formData)
-                    this.$message('Товар добавлен в корзину')
+                    this.$message('Product added to basket. Товар добавлен в корзину.')
                 } else {
                     console.log("Гостю можно предложить зарегаться или создать ячейку для анонимного пользователя");
                     await store.dispatch('auth/createAnonimous')
@@ -134,7 +139,7 @@ export default {
                         userId: this.userId
                     }
                     await store.dispatch('baskets/addToBasket', formData)
-                    this.$message('Товар добавлен в корзину')
+                    this.$message('Product added to basket. Товар добавлен в корзину.')
                 }
             } catch (error) {
                 console.log(error);
@@ -144,7 +149,7 @@ export default {
         buyNow() {
             this.addToBasket()
             if (this.userId) {
-                this.$router.push({ name: 'favorites' })
+                this.$router.push({ name: 'basket' })
             }
         },
     }

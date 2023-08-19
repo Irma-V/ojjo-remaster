@@ -9,7 +9,7 @@
                     <div
                         class="sub-item font-sans font-thin tracking-tight text-xs sm:text-sm min-[769px]:text-sm lg:text-base xl:text-xl w-full min-[769px]:w-4/6">
                         <div class="sub-item__wrapper flex flex-col min-[769px]:flex-row justify-between h-full">
-                            <ul class="list basis-[30%] h-full flex flex-col mb-[5%] min-[769px]:mb-0">
+                            <ul class="list basis-[30%] h-full flex flex-col m-[5%] min-[769px]:mb-0">
                                 <li>
                                     <span>
                                         Personal manager
@@ -28,7 +28,7 @@
                             </ul>
                             <div class="feedback basis-[70%] h-full border p-4 min-[769px]:mb-[7%]">
                                 <div class="bg-white h-full flex flex-col sm:flex-row justify-between items-center p-4">
-                                    <div class="inpt basis-[45%]">
+                                    <div class="inpt basis-[45%] w-full">
                                         <input type="text" placeholder="your e'mail" class="h-[2.8125rem]">
                                     </div>
                                     <div class="btn basis-[45%] w-full pt-4 sm:pt-0">
