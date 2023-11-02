@@ -119,9 +119,9 @@ export default {
         }),
     },
 
-    async mounted() {
+    mounted() {
         this.filterTitles = filterTitles
-        await this.updateProducts()
+        this.updateProducts()
         this.loadMore()
     },
 
@@ -141,7 +141,7 @@ export default {
             this.loading = false
         },
 
-        async filterChangeHandler(event, name) {
+        filterChangeHandler(event, name) {
             // console.log('содержимое event и name: ',event, name)
 
             /* Очищение каталога */
